@@ -1,0 +1,79 @@
+CONVERT TO POLICY LOG ---------
+API Request(Asset API):--
+SHL000166027
+API Response(Asset API):--
+{
+     "policyNumber": "SHL000166027",
+     "proRataPremium": null,
+     "policyPremium": {
+          "policyNumber": "SHL000166027",
+          "quoteId": "1c83d808-b163-4cbc-8438-28109e1b67db",
+          "totalPremium": 2325.59,
+          "prorataPremium": 310.08,
+          "prorataDate": "0001-01-01T00:00:00",
+          "basicExcess": 2500.0,
+          "voluntaryExcess": 0.0,
+          "totalSasria": 9.8404,
+          "referredItems": [],
+          "declineItems": [],
+          "totalVat": 348.8385,
+          "vatRate": 0.0,
+          "policyFees": 0.0,
+          "brokerCommission": 0.0,
+          "agentCommission": 0.0,
+          "decision": 0,
+          "cashback": null,
+          "items": [
+               {
+                    "itemId": "89504fee-6b6c-463d-8668-095a0013ccfc",
+                    "itemKey": "BOLERO NEF P/U D/C",
+                    "itemType": "Vehicle",
+                    "premiumType": "NormalPremium",
+                    "premium": 2325.59,
+                    "premiumApplicable": true,
+                    "premiumDue": 2325.59,
+                    "basicExcess": 2500.0,
+                    "newExcess": 0.0,
+                    "vountaryExcess": 0.0,
+                    "sumInsured": 134800.0,
+                    "premiumComponents": null,
+                    "sasria": 9.8404,
+                    "sasriaVat": 1.47606,
+                    "sasriaCommission": 0.49202,
+                    "commissionAmount": 116.2795,
+                    "vatAmount": 348.8385,
+                    "decision": "REFERRED",
+                    "decisionReason": "|\r\nVehicle model excluded from cover",
+                    "discountType": "PERCENTAGE",
+                    "discountAmount": 0.0,
+                    "discountLoading": 0.0,
+                    "inspectionRequired": false
+               },
+               {
+                    "itemId": "89504fee-6b6c-463d-8668-095a0013ccfc",
+                    "itemKey": "BOLERO NEF P/U D/C",
+                    "itemType": "Vehicle",
+                    "premiumType": "DiscountedPremium",
+                    "premium": 2185.63,
+                    "premiumApplicable": false,
+                    "premiumDue": 2185.63,
+                    "basicExcess": 2500.0,
+                    "newExcess": 0.0,
+                    "vountaryExcess": 0.0,
+                    "sumInsured": 134800.0,
+                    "premiumComponents": null,
+                    "sasria": 9.8404,
+                    "sasriaVat": 1.47606,
+                    "sasriaCommission": 0.49202,
+                    "commissionAmount": 116.2795,
+                    "vatAmount": 348.8385,
+                    "decision": "REFERRED",
+                    "decisionReason": "|\r\nVehicle model excluded from cover",
+                    "discountType": "PERCENTAGE",
+                    "discountAmount": 0.0,
+                    "discountLoading": 1.0,
+                    "inspectionRequired": false
+               }
+          ]
+     }
+}

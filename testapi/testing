@@ -1,0 +1,785 @@
+class asset_homecontent(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        global testdb,test_case,rlog,logdat,stsec,start_time,dof,tlog
+        test_case = "asset_homecontent"
+        testdb = test_rating_db("rate_home_contents")
+
+        #Intializing the report builder
+
+        rlog = report_builder('asset_homecontent')
+        logdat = {
+                    'testc':[],
+                    'time_taken':'',
+                    'start_time':'',
+                    'end_time':''
+                 }
+        stsec = time.time()
+        start_time = time.asctime(time.localtime(time.time()))
+
+        logdat['start_time'] = start_time
+
+        #Intializing the log builder
+
+        tlog = log_builder('Assetapi_homecontent')
+
+        """
+        logger.debug('debug message')
+        logger.info('info message')
+        logger.warning('warn message')
+        logger.error('error message')
+        logger.critical('critical message')
+        """
+
+    #@unittest.skip('done')
+    def test_content_asset_with_ControlledAccess(self):
+        caseval = "ControlledAccess"
+        tinfo = "rate_keys"
+        tclist = {'testcase':'test_content_asset_with_ControlledAccess'}
+
+        logger = tlog.set_log('INFO','format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO','noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval,test_case,tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_Alarm(self):
+        caseval = "Alarm"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_Alarm'}
+
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        #validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+
+    def test_content_asset_with_HighWallCode(self):
+        caseval = "HighWallCode"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_HighWallCode'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+
+    def test_content_asset_with_ApplianceBreakdown(self):
+        caseval = "ApplianceBreakdown"
+        tinfo = "rate_keys"
+
+        tclist = {'testcase': 'test_content_asset_with_ApplianceBreakdown'}
+
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+
+
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+
+    def test_content_asset_with_BurglarBarType(self):
+        caseval = "BurglarBarType"
+        tinfo = "rate_keys"
+
+        tclist = {'testcase': 'test_content_asset_with_BurglarBarType'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_NCB(self):
+        caseval = "NCB"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_NCB'}
+
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+
+
+    def test_content_asset_with_RoofType(self):
+        caseval = "RoofType"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_RoofType'}
+
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_WallType(self):
+        caseval = "WallType"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_WallType'}
+
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_HomeArea(self):
+        caseval = "HomeArea"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_HomeArea'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_HomeType(self):
+        caseval = "HomeType"
+        tinfo = "rate_keys"
+
+
+        tclist = {'testcase': 'test_content_asset_with_HomeType'}
+
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_policyFrequency(self):
+        caseval = "﻿policyFrequency"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_ppolFrequency'}
+
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+
+    def test_content_asset_with_itemStatus(self):
+        caseval = "itemStatus"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_itemStatus'}
+
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_BuildingUsage(self):
+        caseval = "BuildingUsage"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_BuildingUsage'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_IsCommune(self):
+        caseval = "IsCommune"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_IsCommune'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_RentedBuilding(self):
+        caseval = "RentedBuilding"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_RentedBuilding'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_HasElectricGates(self):
+        caseval = "HasElectricGates"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_HasElectricGates'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_HasAccessControl(self):
+        caseval = "HasAccessControl"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_HasAccessControl'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_Legal(self):
+        caseval = "Legal"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_Legal'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_Dwell100Water(self):
+        caseval = "Dwell100Water"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_Dwell100Water'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+    def test_content_asset_with_ContentsFullyFurnished(self):
+        caseval = "ContentsFullyFurnished"
+        tinfo = "rate_keys"
+        tclist = {'testcase': 'test_content_asset_with_ContentsFullyFurnished'}
+        logger = tlog.set_log('INFO', 'format')
+        logger.info("Test case:--")
+        logger = tlog.set_log('INFO', 'noformat')
+
+        logger.info(tclist['testcase'])
+
+        logger.info("{----------")
+        testdb.get_rating_factors(caseval, test_case, tinfo)
+        assetops = Asset_stack()
+        asset_req = assetops.build_asset_stack("Home_contents")
+        logger.info("<<<<<<<< api-gateway-request >>>>>>>>>>")
+        logger.info(asset_req)
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        logger.info("<<<<<<<< api-gateway-response >>>>>>>>>>")
+        #check
+        logger.info(asset_resp[0])
+
+        logger.info("-----------}")
+
+        # validate response
+        goky = All_safe()
+        itemc = goky.checkoutput(asset_resp)
+
+        tclist['status'] = itemc
+
+        logdat['testc'].append(tclist)
+
+
+
+
+
+    @classmethod
+    def tearDownClass(cls):
+
+        etsec = time.time()
+        end_time = time.asctime(time.localtime(time.time()))
+
+
+        print('start time:', start_time)
+        print('end time:  ', end_time)
+        print("--- %s seconds ---" % (etsec - stsec))
+
+        logdat['end_time'] = end_time
+        logdat['time_taken'] = (etsec - stsec)
+
+        rlog.log_repdata(logdat,'testsuite')
+
+        print(logdat)
+
+        rlog.report_handover('handover')
+        tlog.file_handover('handover')

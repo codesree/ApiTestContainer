@@ -1,0 +1,4257 @@
+INFO - asset_allrisks - Test case:-- - 2018-10-16 01:53:21,273
+test_allrisks_asset_with_subsection
+{----------
+{'BOOKSANDPICTURES': '103', 'CONTACTLENSES': '105', 'CARRADIOTAPECDPLAYERS': '106', 'JEWELLERY': '107', 'CLOTHINGANDPERSONALEFF': '108', 'PAINTINGS': '109', 'FISHINGEQUIPMENT': '110', 'CAMPINGEQUIPMENT': '111', 'SPORTINGEQUIPMENT': '112', 'COINSMEDALSSTAMPS': '116', 'MUSICALEQUIPMENT': '117', 'PORTABLETVSET': '118', 'PORTABLERADIO': '119', 'FIREAMS': '120', 'GOLFCLUBS': '121', 'KEYSANDLOCKS': '122', 'GROCERIES': '123', 'MOTORTOOLS': '124', 'PERSONALDOCUMENTS': '126', 'CARTELEPHONE': '127', 'CELLULARPHONE': '128', 'ITEMSINBANKDEPOSITVAULT': '129', 'TRAILERCONTENTS': '130', 'CARAVANCONTENTS': '131', 'CAMERAS': '134', 'VIDEOCAMERAS': '135', 'PEDALCYCLES': '136', 'SPECIFIEDITEMS': '137', 'TVTUBECOVER': '138', 'COMPUTEREQUIPMENT': '139'}
+<<<<<<<< api-gateway-request >>>>>>>>>>
+{
+     "quoteHeader": {
+          "srsId": "SRS_ID",
+          "consultantCode": "CCode",
+          "quoteNumber": "",
+          "productId": "ca495c59-25a8-4ea3-8caa-e4499605c29a",
+          "productVersion": "1.0",
+          "faAgreementNumber": "A12345",
+          "premiums": []
+     },
+     "persons": [
+          {
+               "personKey": "akintest001-person001",
+               "bankAccounts": [
+                    {
+                         "key": "akintest001-bankAccount001"
+                    }
+               ],
+               "contacts": [
+                    {
+                         "key": "akintest001-contact001"
+                    }
+               ],
+               "addresses": [
+                    {
+                         "key": "akintest001-address001"
+                    }
+               ],
+               "firstName": "Alfred",
+               "surname": "Tester",
+               "initials": "A",
+               "title": "MR",
+               "dateOfBirth": "1978-03-02T00:00:00",
+               "identityNumber": "7803029176099",
+               "idCountryOfIssue": "SA",
+               "isPensioner": false,
+               "isPolicyHolder": true,
+               "gender": "1",
+               "identityDocumentType": "1",
+               "maritalStatus": "SINGLE",
+               "communicationMethod": "3",
+               "popiConsentIndicator": true,
+               "fraudCriminalOffence": false,
+               "marketingConsentIndicator": true,
+               "judgement": false,
+               "insuranceDeclinedPreviously": false,
+               "itcDetails": {
+                    "itcKey": "123904",
+                    "itcConsent": true,
+                    "itcEffectiveDate": "2018-10-31T00:00:00",
+                    "itcLapse": 3,
+                    "ITCLoss": 34,
+                    "itcScore": 46,
+                    "itcLapseBand": "ITC Lapse band",
+                    "itcLossBand": "ITC Loss Band",
+                    "itcVersion": 1
+               }
+          }
+     ],
+     "contacts": [
+          {
+               "contactKey": "akintest001-contact001",
+               "text": "0833005765",
+               "contactType": "MOBILENO"
+          }
+     ],
+     "addresses": [
+          {
+               "addressKey": "akintest001-address001",
+               "addressType": "RISKADDRESS",
+               "addressLine1": "23 Test Street",
+               "addressLine2": "DURBAN NORTH",
+               "addressLine3": "",
+               "addressLine4": "DURBAN",
+               "postCode": "4051",
+               "province": "Kwazulu Natal",
+               "streetNumber": 23
+          }
+     ],
+     "bankAccounts": [
+          {
+               "bankAccountKey": "akintest001-bankAccount001",
+               "accountNumber": "41858565",
+               "name": "Judge",
+               "surname": "Dredd",
+               "initials": "J",
+               "idNumber": "8702029176099",
+               "branchCode": "051001",
+               "isValidated": true,
+               "validationResponse": "",
+               "validationOverridden": false,
+               "bankName": "Standard Bank",
+               "accountType": "SAVINGSACCOUNT"
+          }
+     ],
+     "quoteMembers": [
+          {
+               "personId": {
+                    "key": "akintest001-person001"
+               },
+               "isRequired": true,
+               "memberType": "POLICYHOLDER"
+          }
+     ],
+     "sections": [
+          {
+               "productSectionId": "bae31e37-3c54-4490-8951-56668c6a3ba6",
+               "productId": "bae31e37-3c54-4490-8951-56668c6a3ba6",
+               "name": "All Risks",
+               "items": [
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- COMPUTEREQUIPMENT",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "COMPUTEREQUIPMENT"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- BOOKSANDPICTURES",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "BOOKSANDPICTURES"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- CONTACTLENSES",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "CONTACTLENSES"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- CARRADIOTAPECDPLAYERS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "CARRADIOTAPECDPLAYERS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- JEWELLERY",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "JEWELLERY"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- CLOTHINGANDPERSONALEFF",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "CLOTHINGANDPERSONALEFF"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- PAINTINGS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "PAINTINGS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- FISHINGEQUIPMENT",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "FISHINGEQUIPMENT"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- CAMPINGEQUIPMENT",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "CAMPINGEQUIPMENT"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- SPORTINGEQUIPMENT",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "SPORTINGEQUIPMENT"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- COINSMEDALSSTAMPS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "COINSMEDALSSTAMPS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- MUSICALEQUIPMENT",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "MUSICALEQUIPMENT"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- PORTABLETVSET",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "PORTABLETVSET"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- PORTABLERADIO",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "PORTABLERADIO"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- FIREAMS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "FIREAMS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- GOLFCLUBS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "GOLFCLUBS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- KEYSANDLOCKS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "KEYSANDLOCKS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- GROCERIES",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "GROCERIES"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- MOTORTOOLS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "MOTORTOOLS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- PERSONALDOCUMENTS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "PERSONALDOCUMENTS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- CARTELEPHONE",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "CARTELEPHONE"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- CELLULARPHONE",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "CELLULARPHONE"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- ITEMSINBANKDEPOSITVAULT",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "ITEMSINBANKDEPOSITVAULT"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- TRAILERCONTENTS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "TRAILERCONTENTS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- CARAVANCONTENTS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "CARAVANCONTENTS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- CAMERAS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "CAMERAS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- VIDEOCAMERAS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "VIDEOCAMERAS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- PEDALCYCLES",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "PEDALCYCLES"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- SPECIFIEDITEMS",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "SPECIFIEDITEMS"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    },
+                    {
+                         "name": "AllRisk",
+                         "itemType": "AllRisk",
+                         "sumInsured": 10000,
+                         "itemKey": "AllRisk-test",
+                         "coverEffectiveDate": "2018-10-01T08:30:02.707Z",
+                         "policyStartDate": "2018-10-01T12:00:00.000Z",
+                         "renewalDate": "2019-09-30T12:00:00.000Z",
+                         "policyFrequency": "MONTHLY",
+                         "description": "automated enum- TVTUBECOVER",
+                         "childItems": [],
+                         "discountDetails": {
+                              "discountType": "DISCRETIONARY",
+                              "discountAmount": 0.0,
+                              "discountDiscretionary": true,
+                              "discountExpiryDate": "2019-09-30T00:00:00"
+                         },
+                         "premiumDetails": {
+                              "excessAmount": 0.0,
+                              "personalLinePremium": 0.0,
+                              "sasriaAmount": 0.0,
+                              "totalPremium": 0.0,
+                              "vatAmount": 0.0
+                         },
+                         "versionDate": "2018-08-21T12:00:00.000Z",
+                         "itemProperties": [
+                              {
+                                   "name": "ageOfPolicyHolder",
+                                   "value": 48
+                              },
+                              {
+                                   "name": "allRiskId",
+                                   "value": "110"
+                              },
+                              {
+                                   "name": "subsection",
+                                   "value": "TVTUBECOVER"
+                              },
+                              {
+                                   "name": "area",
+                                   "value": 4051
+                              },
+                              {
+                                   "name": "voluntaryExcess",
+                                   "value": 1500
+                              },
+                              {
+                                   "name": "product",
+                                   "value": "SHS"
+                              },
+                              {
+                                   "name": "ageOfPolicy",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "useOfResidence",
+                                   "value": "ASYOURPERMANENTRESIDENCE"
+                              },
+                              {
+                                   "name": "landSlip",
+                                   "value": false
+                              },
+                              {
+                                   "name": "noOfClaims",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "quoteNumber",
+                                   "value": 1879615
+                              },
+                              {
+                                   "name": "itemNumber",
+                                   "value": 110
+                              },
+                              {
+                                   "name": "currentExcess",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "freePa",
+                                   "value": 0
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "EXISTINGITEM"
+                              },
+                              {
+                                   "name": "source",
+                                   "value": "Liberty"
+                              },
+                              {
+                                   "name": "storageLocation",
+                                   "value": "UNKNOWN"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "allRiskTestKey"
+                              }
+                         ],
+                         "itemPremiums": [],
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         }
+                    }
+               ]
+          },
+          {
+               "productSectionId": "4f1310e9-9956-4b4c-82e8-76923e44bc1c",
+               "productId": "ca495c59-25a8-4ea3-8caa-e4499605c29a",
+               "name": "Vehicles",
+               "items": [
+                    {
+                         "name": "Vehicle",
+                         "itemType": "Vehicle",
+                         "sumInsured": 100000,
+                         "coverEffectiveDate": "2018-10-31T13:07:44.9379004+02:00",
+                         "itemKey": "TAZZ 130",
+                         "policyFrequency": "MONTHLY",
+                         "claimsHistory": {
+                              "NoOfClaims0to12": 0,
+                              "NoOfClaims13to24": 0,
+                              "NoOfClaims25to36": 0
+                         },
+                         "childItems": [
+                              {
+                                   "name": "Parking",
+                                   "itemType": "Parking",
+                                   "sumInsured": 0,
+                                   "itemProperties": [
+                                        {
+                                             "name": "DayParkingAddressId",
+                                             "value": "akintest001-address001"
+                                        },
+                                        {
+                                             "name": "NightParkingAddressId",
+                                             "value": "akintest001-address001"
+                                        }
+                                   ]
+                              },
+                              {
+                                   "name": "driver",
+                                   "itemType": "driver",
+                                   "sumInsured": 0,
+                                   "childItems": [],
+                                   "itemProperties": [
+                                        {
+                                             "name": "PersonID",
+                                             "value": "akintest001-person001"
+                                        },
+                                        {
+                                             "name": "DriverType",
+                                             "value": "PRIMARY"
+                                        },
+                                        {
+                                             "name": "LicenceDateObtained",
+                                             "value": "2010-08-11T09:14:04Z"
+                                        },
+                                        {
+                                             "name": "LicenceDateExpired",
+                                             "value": "2020-08-11T09:14:04Z"
+                                        },
+                                        {
+                                             "name": "LicenceType",
+                                             "value": "LICENCE"
+                                        },
+                                        {
+                                             "name": "LicenceCode",
+                                             "value": "EB"
+                                        }
+                                   ]
+                              }
+                         ],
+                         "itemProperties": [
+                              {
+                                   "name": "Make",
+                                   "value": "TOYOTA"
+                              },
+                              {
+                                   "name": "Model",
+                                   "value": "TAZZ 130"
+                              },
+                              {
+                                   "name": "MMCode",
+                                   "value": ""
+                              },
+                              {
+                                   "name": "Year",
+                                   "value": "2005"
+                              },
+                              {
+                                   "name": "EngineNo",
+                                   "value": "23454323443"
+                              },
+                              {
+                                   "name": "VINNo",
+                                   "value": "52342212345"
+                              },
+                              {
+                                   "name": "VehicleLicenseDiskNumber",
+                                   "value": "12345543"
+                              },
+                              {
+                                   "name": "VehicleRegisterNumber",
+                                   "value": "fp78thgp"
+                              },
+                              {
+                                   "name": "LicensePlateNumber",
+                                   "value": "WWE137GP"
+                              },
+                              {
+                                   "name": "Colour",
+                                   "value": "white"
+                              },
+                              {
+                                   "name": "ExcessWaiver",
+                                   "value": "false"
+                              },
+                              {
+                                   "name": "Financed",
+                                   "value": "false"
+                              },
+                              {
+                                   "name": "LoanAmount",
+                                   "value": "0"
+                              },
+                              {
+                                   "name": "CoverOption",
+                                   "value": "MARKET"
+                              },
+                              {
+                                   "name": "AlarmType",
+                                   "value": "FACTORY"
+                              },
+                              {
+                                   "name": "hasImmobiliser",
+                                   "value": "true"
+                              },
+                              {
+                                   "name": "VehicleRebuilt",
+                                   "value": "false"
+                              },
+                              {
+                                   "name": "Cover",
+                                   "value": "COMPREHENSIVE"
+                              },
+                              {
+                                   "name": "Usage",
+                                   "value": "SOCIALANDTOANDFROMWORK"
+                              },
+                              {
+                                   "name": "CarHireOption",
+                                   "value": "CLASSC"
+                              },
+                              {
+                                   "name": "NewVehicle",
+                                   "value": "false"
+                              },
+                              {
+                                   "name": "HasTrackingDevice",
+                                   "value": "TRACKING"
+                              },
+                              {
+                                   "name": "ParkedOvernight",
+                                   "value": "INLOCKEDGARAGE"
+                              },
+                              {
+                                   "name": "BusinessCategory",
+                                   "value": "PERSONALSERVICES"
+                              },
+                              {
+                                   "name": "BusinessNature",
+                                   "value": "INSURABLE"
+                              },
+                              {
+                                   "name": "CommodityCarrying",
+                                   "value": "ART"
+                              },
+                              {
+                                   "name": "CrossBorder",
+                                   "value": "DONTCROSSBORDER"
+                              },
+                              {
+                                   "name": "Radius",
+                                   "value": "15"
+                              },
+                              {
+                                   "name": "CarryGoods",
+                                   "value": "false"
+                              },
+                              {
+                                   "name": "Transmission",
+                                   "value": "AUTOMATIC"
+                              },
+                              {
+                                   "name": "itemStatus",
+                                   "value": "ACTIVE"
+                              },
+                              {
+                                   "name": "itemKey",
+                                   "value": "vehicleTestKey"
+                              },
+                              {
+                                   "name": "isCodeIII",
+                                   "value": false
+                              },
+                              {
+                                   "name": "isRebuild",
+                                   "value": false
+                              },
+                              {
+                                   "name": "policyFrequency",
+                                   "value": "MONTHLY"
+                              },
+                              {
+                                   "name": "performanceModification",
+                                   "value": false
+                              }
+                         ]
+                    }
+               ]
+          }
+     ]
+}
+<<<<<<<< api-gateway-response >>>>>>>>>>
+{
+     "quoteNumber": "SHL000165574",
+     "items": [
+          {
+               "itemId": "fa4b5b81-ce43-46f4-942a-32903633e646",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "ba8f0262-c9b0-4344-9219-f3e7938a6cee",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "ea962518-652d-482d-81cf-4ef483c95e9a",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "c9404456-9506-4404-bb90-168c042fa52d",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "27928328-2d8b-426c-8b5a-f5f1deacdcf5",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "5cd043e7-e107-4180-a205-7ec1e19e6c87",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "bfa08ebf-998d-41a1-827b-45ff14a84341",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "ccd78e17-241a-4b1a-bee6-8626d764a067",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "fc712f86-2984-4a58-b2b8-44b419d6df05",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "e81f6fd8-47d1-4b27-b54a-58e7eb639ad9",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "c610a9b0-0340-4afc-991b-f50170d77897",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "4580ef8d-b48c-43fb-bf54-28fbdd9e8454",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "d0f04e31-6c46-46c9-ae40-6e8255a74a3c",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "6d3925ad-1f0e-48e6-86a1-6313098c0a3f",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "cc06a82c-ebd5-49d3-861a-b9dca7484410",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "252e1a96-8645-4586-b2ba-b0c69340a4df",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "28aff5ab-55b6-4661-a8a5-6b2100886dc6",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "b41630f9-dfa8-4fc7-87ad-e7caa0680e7f",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "2da06a73-f2eb-46df-af7e-0395e8aa76ae",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "3cbe472f-7735-4213-bc03-fa69bff880ad",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "acb689d5-c862-4691-a161-ff0edcd76b7c",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "a481b1bb-758f-48eb-a24b-a85e7155ad9e",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "8375db23-1eb9-489c-b06f-04a1a902cf5c",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "92fcb209-6871-45fd-9f68-55ed9737378b",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "22192303-f6f8-4a0e-9517-21717e9721a3",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "99713988-d0a3-4df1-a965-0989423c91af",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "0d0a5ae9-5604-49f1-b28f-5bf5ce114b5d",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "8e202411-cc5d-41ea-b58c-4eb9b84fd074",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "6b438944-e11a-4441-8571-23e90a79177a",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "4539697d-d6bc-4e0e-ae15-fc7c4673a2fd",
+               "itemKey": "AllRisk-test",
+               "itemType": "ALLRISK",
+               "premiumType": "NormalPremium",
+               "premium": 247.22,
+               "premiumDue": 247.22,
+               "basicExcess": 0.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 10000.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 12.361,
+               "vatAmount": 37.083,
+               "decision": "REFERRED",
+               "decisionReason": "|\r\nAllrisk not supported by contents",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          },
+          {
+               "itemId": "cd6bd675-6ca5-48ef-906d-2f20fab473ab",
+               "itemKey": "TAZZ 130",
+               "itemType": "CAR",
+               "premiumType": "DiscountedPremium",
+               "premium": 922.62,
+               "premiumDue": 922.62,
+               "basicExcess": 2000.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 32650.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 48.404,
+               "vatAmount": 145.212,
+               "decision": "ACCEPTED",
+               "decisionReason": "",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": false
+          },
+          {
+               "itemId": "cd6bd675-6ca5-48ef-906d-2f20fab473ab",
+               "itemKey": "TAZZ 130",
+               "itemType": "CAR",
+               "premiumType": "NormalPremium",
+               "premium": 968.08,
+               "premiumDue": 968.08,
+               "basicExcess": 2000.0,
+               "newExcess": 0.0,
+               "voluntaryExcess": 0.0,
+               "sumInsured": 32650.0,
+               "sasria": 5.0,
+               "sasriaVat": 0.75,
+               "sasriaCommission": 0.25,
+               "commissionAmount": 48.404,
+               "vatAmount": 145.212,
+               "decision": "ACCEPTED",
+               "decisionReason": "",
+               "discountType": "PERCENTAGE",
+               "discountAmount": 0.0,
+               "inspectionRequired": false,
+               "premiumApplicable": true
+          }
+     ]
+}
+-----------}

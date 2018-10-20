@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% extends "tag_home.html"  %}
+<head>
+    <title>Test Access Gateway - API GATEWAY testing</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css" media="screen">
+    #editor {
+        height: 350px;
+    }
+
+    #editor2 {
+        height: 350px;
+    }
+  </style></head>
+{% load static %}
+{% block body_block %}
+<div class="container">
+                <br>
+            <div class="row">
+                <div class="panel panel-primary">
+                    {% if pantit == "amdp" %}
+                    <div class="panel-heading">API request - <kbd>POLICY ENDORSEMENT</kbd></div>
+                    <div class="panel-body">
+                    <div id="editor">{{amd_data}}
+                    </div>
+                   </div>
+                    {% elif pantit == "adpa" %}
+                    <div class="panel-heading">API request - <kbd>ACCEPT/DECLINE POLICY AMENDMENT</kbd></div>
+                    <div class="panel-body">
+                         <form  method = 'POST' action="{% url 'beanstalk_amendment' %}">
+                         {% csrf_token %}
+                         {% csrf_token %}
+                             <div class="form-group">
+       <div class="list-group">
+                     <div class="col-sm-6">
+                     <p class=list-group-item>
+              <label for="adsel">Select Accept/Decline Policy Endorsement :</label><br>
+              <select id="adsel" name="adsel" class="form-control">
+                             <option>Select an option:</option>
+                             <option value="Accept">Accept</option>
+                             <option value="Decline">Decline</option>
+          </select>
+                     </p>
+
+                                                     <br>
+                        <input type= "submit" class="btn btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="acdpost" id="acdpost"
+                        value="PROCEED WITH THIS DECISION">
+                     </div>
+        </div>
+                        </div>
+
+                         </form><br>
+
+                    </div>
+                    {% elif pantit == "comp" %}
+                    <div class="panel-heading">API request - <kbd>VIEW CHANGES</kbd></div>
+                        <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">Would you like to compare changes using Beanstalk Policy endorsement versions:</div>
+                        </div>
+
+
+                            <br>
+                         <div class="col-sm-4"><a href="{% url "beanstalk_transition" %}"><button class="btn btn-primary btn-sm btn-block">Compare</button></a></div>
+                         <div class="col-sm-4"><a href="{% url "beanstalk_transition" %}"><button class="btn btn-primary btn-sm btn-block">Goto View - Policy Endorsement</button></a></div>
+
+                        </div>
+                    {% else %}{% endif %}
+                   </div>
+                </div>
+            </div>
+
+          <form method = 'POST' action="{% url 'beanstalk_amendment' %}">
+           {% csrf_token %}
+           <div class="form-group">
+                    <textarea name="content" id="content" hidden="hidden" value="content"></textarea>
+                           </div>
+           <!-- checkpoint execute/proceed - accept/convert to policy -->
+           {% if pantit == 'amdp'%}
+          <input type= "submit" class="btn btn-primary btn-sm btn-block" data-toggle="tooltip" data-placement="left" title="Post request" name="amdpost" id="amdpost"
+             value="PROCEED WITH POLICY AMENDMENT">
+           {% else %}
+           {% endif %}
+      </form><br>
+
+</div>
+
+<div class="container">
+    <div class="row">
+            <div class="panel panel-primary">
+                               <div class="panel-heading">
+                                   API response</div>
+                   <div class="panel-body">
+        <div class="col-md-4">
+            <ul class="list-group">
+                                     {% if dispq %}
+                                 <li class="list-group-item list-group-item-info">Policy number: <kbd>{{dispq}}</kbd></li>
+                                        {% if pantit == 'adpa' %}
+                                 <li class="list-group-item list-group-item-info"><mark>Congratulations..Policy Endorsement is actived and it is now ready to accept/decline</mark></li>
+                                 <li class="list-group-item list-group-item-info">API request/response log: <a href="{% url 'download_assetrr' %}"> <button type="button" class="btn btn-danger btn-sm"> Download </button> </a></li>
+                                        {% elif pantit == 'comp' %}
+                                 <li class="list-group-item list-group-item-info"><mark>Congratulations..Policy is processed successfully</mark></li>
+                                        {% else %}{% endif %}
+                                     {% else %}
+                                     {% endif %}
+                                     {% if result == 'Success' %}
+                                <li class="list-group-item list-group-item-info">Status: <p class="text-success">Success</p></li>
+                                 <li class="list-group-item list-group-item-info">Http Status Code: <kbd>{{ stat }}</kbd></li>
+                                     {% elif result == 'Fail' %}
+                                            <li class="list-group-item list-group-item-info">Status: <p class="text-success">Error</p></li>
+                                 <li class="list-group-item list-group-item-info">Http Status Code: <kbd>{{ stat }}</kbd></li>
+                                 <li class="list-group-item list-group-item-info">API request/response log: <a href="{% url 'download_assetrr' %}"> <button type="button"  class="btn btn-default active btn-sm"> Download </button> </a></li>
+
+                                 {% else %}
+                                 {% endif %}
+            </ul>
+        </div>
+                    <div class="col-md-8">
+                                  <div id="editor2">{{amdresp_data}}</div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script src="{% static "src_noconflict/ace.js" %}" type="text/javascript" charset="utf-8">
+</script>
+<script>
+
+    {% if pantit == 'adpa' or pantit == 'comp' %}
+   var editor2 = ace.edit("editor2");
+
+   editor2.setTheme("ace/theme/dracula");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor2').style.fontSize='14px';
+
+    {% else %}
+   var textarea = $('#content');
+   var editor = ace.edit("editor");
+   var editor2 = ace.edit("editor2")
+   editor.setTheme("ace/theme/eclipse");
+   editor.getSession().setMode("ace/mode/json");
+   document.getElementById('editor').style.fontSize='14px';
+   editor2.setTheme("ace/theme/dracula");
+   editor2.getSession().setMode("ace/mode/json");
+   document.getElementById('editor2').style.fontSize='14px';
+   editor.getSession().on('change', function () {
+       textarea.val(editor.getSession().getValue());
+   });
+   textarea.val(editor.getSession().getValue());
+   $("#toggletextarea-btn").on('click', function () {
+       textarea.toggle();
+       $(this).text(function (i, text) {
+           return text === "Show Content" ? "Hide Content" : "Show Content";
+       });
+   });
+   $("#alertcontent-btn").on('click', function () {
+       alert(textarea.val());
+   });
+    {% endif %}
+
+</script>
+
+
+{% endblock %}
+

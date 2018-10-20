@@ -1,0 +1,48 @@
+CALCULATE PRORATA LOG ---------
+API Request(Asset API):--
+{
+     "quoteNumber": "SHL000166027",
+     "policyNumber": "",
+     "referralOverrideIndicator": true,
+     "underwriterNotes": "",
+     "coverEffectiveDate": "2018-08-29T12:10:28.735Z",
+     "PremiumTypes": "NormalPremium",
+     "DebitOrderDate": "2018-10-04T13:33:08.725Z",
+     "bankingDetails": {
+          "bankAccountKey": "akintest001-bankAccount001",
+          "accountNumber": "41858565",
+          "name": "Judge",
+          "surname": "Dredd",
+          "initials": "J",
+          "idNumber": "8702029176099",
+          "branchCode": "051001",
+          "isValidated": true,
+          "validationResponse": "",
+          "validationOverridden": false,
+          "bankName": "Standard Bank",
+          "accountType": "SAVINGSACCOUNT"
+     }
+}
+                    
+API Response(Asset API):--
+{
+     "referenceNumber": "SHL000166027",
+     "totalProrata": 310.08,
+     "totalSasria": 9.8404,
+     "totalCommission": 116.2795,
+     "totalFees": 0.0,
+     "totalPremium": 2325.59,
+     "policyPremium": false,
+     "policyInceptionDate": "2018-08-29T12:10:28.735Z",
+     "items": [
+          {
+               "itemKey": "BOLERO NEF P/U D/C",
+               "itemId": "da499ff0-f13c-4d8b-866c-0fd035934fdd",
+               "premiumType": "NormalPremium",
+               "prorataAmount": 310.08,
+               "sasriaAmount": 9.8404,
+               "sasriaVat": 1.47606,
+               "coverEffectiveDate": "2018-10-31T13:07:44"
+          }
+     ]
+}
