@@ -27,28 +27,29 @@
 {% block body_block %}
      <div class="container-fluid bg-2 text-left">
    <div class="well well-sm">
-       <h3 class="beantitle" style="font-weight:bold;font-family:sans-serif; padding: 30px 0;color: darkslateblue">_____________________________ Beanstalk API - Home _____________________________</h3>
+       <h3 class="beantitle" style="font-weight:bold;font-family:sans-serif; padding: 30px 0;color: darkslateblue"> BEANSTALK API FORUM </h3>
+       <h4 style="color:darkolivegreen;">- an Automated service that orchestrates the runtime builds / end to end execution flow through gui</h4>
    </div>
 </div>
 <div class="container">
     <br>
  <div class="col-sm-8">
+
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                <button type="button" class="btn btn-primary active btn-block"><span class="glyphicon glyphicon-off">
-                </span> Beanstalk - Insurance Policy </button> </a>
+                <button class="btn btn-primary"> Beanstalk - Insurance Policy </button> </a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-             Click start to compose - <a href="{% url 'beanstalk_exe2' %}"><button class="btn btn-primary active">START</button></a>
+            <p style="font-family: 'Nanum Gothic';color: #4d559c">Click start to compose -</p><a href="{% url 'beanstalk_exe2' %}"><button class="btn btn-default">START</button></a>
               <br><br>
-          <p>Execution flow -
-              <kbd>Amend Policy</kbd>=>
-              <kbd>Accept PolicyAmendment</kbd>=>
+          <p style="font-family: 'Nanum Gothic';color: #4d559c">Events :
+              <kbd>Amend Policy</kbd>
+              <kbd>Accept PolicyAmendment</kbd>
               <kbd>View before/View after Amend</kbd>
           </p>
         </div>
@@ -58,22 +59,20 @@
       <div class="panel-heading">
                 <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                <button type="submit" class="btn btn-info active btn-block"><span class="glyphicon glyphicon-off">
-                </span> Beanstalk - Insurance Asset Quoting </button> </a>
+                <button type="submit" class="btn btn-primary"> Beanstalk - Insurance Asset Quoting </button> </a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
-             Click start to compose - <a href="{% url 'beanstalk_asset_home' %}"><button class="btn btn-info active">START</button></a>
+             <p style="font-family: 'Nanum Gothic';color: #4d559c">Click start to compose -</p>
+      <a href="{% url 'beanstalk_asset_home' %}"><button class="btn btn-default">START</button></a>
            <br><br>
-                      <p>Execution flow -
-              <kbd>Select entity type</kbd>=>
-              <kbd>Select the product/s</kbd>=>
-              <kbd>Create quote</kbd>=>
-              <kbd>Amend or Accept quote</kbd>=>
+                      <p style="font-family: 'Nanum Gothic';color: #4d559c">Events :
+              <kbd>Select entity - products</kbd>
+              <kbd>Create quote</kbd>
+              <kbd>Amend or Accept quote</kbd>
               <kbd>Convert to Policy</kbd>
           </p>
-
         </div>
     </div>
   </div>
@@ -81,8 +80,7 @@
       <div class="panel-heading">
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                <button type="submit" class="btn btn-primary active btn-block"><span class="glyphicon glyphicon-off">
-                </span> Beanstalk - Insurance Claims </button> </a>
+                <button type="submit" class="btn btn-primary"> Beanstalk - Insurance Claims </button> </a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
@@ -102,10 +100,10 @@
       <img src="{% static "images/Astronaut.png" %}" class="media-object" style="width:80px">
     </div>
     <div class="media-body">
-      <h5 class="media-heading">INFO TAG</h5>
+      <h5 class="media-heading">Information</h5>
       <blockquote>Beanstalk API -
-          <p style="font-family:'Nanum Gothic';font-size: 13px">an orchestration service that facilitates the runtime builds / end to end execution flow through gui
-          <br><br>- the database engine is MongoDB
+          <p style="font-family:'Nanum Gothic';font-size: 13px">
+          <br><br> Automated API services for SIL Insurance Quotes,Policies,claims etc
           </p></blockquote>
          </div>
   </div>

@@ -60,8 +60,6 @@ def Producer():
         'exec5','exec6',
         'exec7','exec8',
         'exec9','exec10',
-
-        # etc..
     ]
     queue = Queue()
     worker_threads = build_worker_pool(queue, 10)

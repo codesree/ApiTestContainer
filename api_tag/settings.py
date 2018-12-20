@@ -18,11 +18,11 @@ import pymongo
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
-STATIC_DIR = os.path.join(BASE_DIR,"static")
+print(BASE_DIR)
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
 
-
-#mongoengine.connect()
+# mongoengine.connect()
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,8 +34,7 @@ SECRET_KEY = 'b(_=8mkl+hpoq#2)18uoeb+fzb17@qr#_mzmp4)x-$t@_*p0zp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['api-env.qvvumpvvq4.us-east-1.elasticbeanstalk.com','127.0.0.1']
-
+ALLOWED_HOSTS = ['api-env.qvvumpvvq4.us-east-1.elasticbeanstalk.com', '127.0.0.1']
 
 # Application definition
 
@@ -83,23 +82,52 @@ WSGI_APPLICATION = 'api_tag.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# .......................M O N G O D B configurations.......................
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'ENFORCE_SCHEMA': True,
-        'NAME': 'ApiTestContainer',
-        'HOST': 'prbk-pa001sap4v',
-        'PORT': 27017,
-    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.oracle',
+    #     'ENFORCE_SCHEMA': True,
+    #     'NAME': 'MAVTST01',
+    #     'HOST': '10.182.237.53',
+    #     'PORT': 1621,
+    #     'USER': 'INSIGHT',
+    #     'PASSWORD':'k2f-m*a1'
+    #
+    #
     # 'default': {
     #     'ENGINE': 'djongo',
+    #     'ENFORCE_SCHEMA': True,
+    #     'NAME': 'ApiTestContainer',
+    #     'HOST': 'prbk-pa001sap4v',
+    #     'PORT': 27017,
+    # },
+    # 'default':
+    # {
+    #     'ENGINE': 'djongo',
     #     'NAME': 'tag_users',
-    #
-    #},
+    # },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'userdb',
+
+}
 }
 
-
-
+# _MONGODB_USER = 'mongouser'
+# _MONGODB_PASSWD = 'password'
+# _MONGODB_HOST = 'prbk-pa001sap4v'
+# _MONGODB_NAME = 'ApiTestContainer'
+# _MONGODB_DATABASE_HOST = \
+#     'mongodb://%s:27017/%s' \
+#     % ( _MONGODB_HOST, _MONGODB_NAME)
+# mongoengine.connect(_MONGODB_NAME,host=_MONGODB_DATABASE_HOST)
+#
+# AUTHENTICATION_BACKENDS = (
+#     'mongoengine.django.auth.MongoEngineBackend',
+# )
+# SESSION_ENGINE = 'mongoengine.django.sessions'
+# SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
+# mongoengine.connect('tag_users')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

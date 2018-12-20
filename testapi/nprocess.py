@@ -9,6 +9,7 @@ class Policy_starter():
     def __init__(self,spinner):
         global col,con
         db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        # db = MongoClient()
         con = db['ApiTestContainer']
         if spinner == 'get_policy' or spinner == 'log_policy' or spinner == 'amend_policy':
             col = con['policy_hub']

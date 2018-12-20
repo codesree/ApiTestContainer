@@ -4,15 +4,18 @@ from .mprocess import Monprocess
 from .nprocess import Policy_starter
 import requests
 from .offline_composer import Composer
+from mongoengine.django.auth import User
 
 import os
 from django.conf import settings
 from django.http import HttpResponse
 from wsgiref.util import FileWrapper
 
-from .tests import asset_homecontent,asset_vehicle,asset_allrisks,report_builder,log_builder,asset_api_process
+from .tests import asset_homecontent,ratingEngineBuild,asset_vehicle,asset_allrisks,report_builder,log_builder,asset_api_process,asset_building
 from .test_gate import All_safe,gateway_process,Rating_engine,Policy_api
 from .test_chamber.testunit import awscert
+
+from .prorata_process import prorata_calculator
 
 import unittest
 import zipfile,shutil
@@ -24,6 +27,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth import authenticate,login,logout
 from .forms import Userform
 from .asset_manager import asset_manager
+
 
 
 def index(request):
@@ -99,6 +103,24 @@ def asset_end_to_end(request):
         'testrep': treprt
     })
 
+def rating_chamber(request):
+
+
+    try:
+        assert (request.method == 'POST' and request.POST.get('builditem') == 'genderfact')
+        gendersel  = request.POST.getlist("gender[]")
+
+        if gendersel == 'all':
+            testbuild = 'testRatingEngineGenderfactor'
+        suite = unittest.TestSuite()
+        suite.addTest(ratingEngineBuild(testbuild))
+    except:
+        pass
+
+    return render(request,'rating_chamber.html')
+
+
+
 def asset_allrisk_suite(request):
     tcrun = unittest.TextTestRunner()
 
@@ -114,6 +136,25 @@ def asset_allrisk_suite(request):
     print('test report:',treprt)
     return render(request, 'asset_test_suite.html', {
         'tstat': 'ardone',
+        'logfile': logfil,
+        'testrep': treprt
+    })
+
+def asset_building_suite(request):
+    tcrun = unittest.TextTestRunner()
+
+    global logfil, treprt
+    logfil = 0
+    treprt = 0
+    # tcrun = HTMLTestRunner(output='/Users/isree/PycharmProjects/tag-build/api_tag/templates/', template='', )
+    # runner = HTMLTestRunner(output='example_suite')
+    tcrun.run(unittest.makeSuite(asset_building))
+    gs = All_safe()
+    logfil = gs.test_all_safe('getfile', 'test')
+    treprt = gs.test_all_safe('getreport', 'test')
+    print('test report:', treprt)
+    return render(request, 'asset_test_suite.html', {
+        'tstat': 'bddone',
         'logfile': logfil,
         'testrep': treprt
     })
@@ -190,6 +231,9 @@ def test_report(request):
         rname = 'LIBERTY STI -  API GATEWAY '
     elif tname == "asset_personal_liability":
         tname = 'ASSET API FOR PERSONAL LIABILITY TEST RATING FATORS'
+        rname = 'LIBERTY STI -  API GATEWAY '
+    elif tname == "asset_building":
+        tname = 'ASSET API FOR BUILDING TEST RATING FATORS'
         rname = 'LIBERTY STI -  API GATEWAY '
     elif tname == "quote_to_policy":
         tname = 'ASSET API - END TO END FLOW - TEST PROCESS '
@@ -882,11 +926,37 @@ def inspector_tag(request):
 
         return render(request,'inspector_home.html',{'trace_resp':'show'})
 
-
     except:
         pass
 
     return render(request,'inspector_home.html')
+
+
+def calculator_tag(request):
+
+    return render(request,'calculator_pro.html')
+
+def calculator_exe(request):
+
+    pcalc = prorata_calculator()
+
+    date_fact = pcalc.getdate()
+
+    #pcalc.prorata_calc_log()
+
+    prdata = pcalc.prorata_main(date_fact)
+
+    try:
+        assert len(prdata) > 0
+        print("prorata calculation is completed")
+
+        return render(request,'calculator_pro.html',{"prlist":prdata,
+                                                     "prcalc":"completed"
+                                                     })
+    except:
+
+        return render(request,'calculator_pro.html')
+
 
 @login_required
 def beanstalk_amendment(request):

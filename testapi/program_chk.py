@@ -1,51 +1,52 @@
 from pymongo import MongoClient
-import requests
 
 
-# db = MongoClient('mongodb://ds117423.mlab.com:17423',
-#                        username='srekanth',
-#                        password='liberty@123',
-#                        authSource='liberty_sti',
-#                        authMechanism='SCRAM-SHA-1')
+print("Hello World!!")
+# db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+db = MongoClient()
 
-db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+con = db['ApiTestContainer']
+# col = con['homecontent_items']
+# reqjson = col.find_one({"itemType": "HomeContent"})
+# del reqjson['_id']
+# print(reqjson)
 
-con = db['api_test_container']
-
-print(con)
-
-col = con['asset_api']
-
-col.insert({"name":"test_payload"})
-
-
-    # asset_item = col.find_one({"itemType":"PersonalLiability"})
-    #
-    # del asset_item['_id']
-
-
-
-    # print(asset_item)
-
-    # loader("building_asset",asset_item)
-
-
-
-# print(db.list_database_names())
-# collect = "vehicle_item"
-# col = con[collect]
+#  --------- MODEL COPY -----------
+# from mongoengine import *
+# from django.contrib.auth.models import User
 #
-# print(con.list_collection_names())
+# class tag_check(models.Model):
+#     #jsonreq = models.CharField(widget=forms.Textarea)
+#     tag_id = models.CharField(max_length=234,unique=True)
+#
+#     def __str__(self):
+#         return self.tag_id
 #
 #
+# class Userpro(models.Model):
+#     user = models.OneToOneField(
+#         User,
+#         on_delete=models.CASCADE
+#     )
 #
-# asset_item = col.find_one({"itemType":"Vehicle"})
+#     def __str__(self):
+#         return self.user.username
 #
-# print(asset_item)
-
-#asset_item = asset_item
 
 
+col = con['homecontent_item_draft']
+# col.update(
+#     {"itemType":"HomeContent"},
+#     {"$set":{"draft":reqjson}}
+#     )
+rkey = "Alarm"
+factnum = "testfact"
+col.update({'draft.itemProperties.name': "" + rkey + ""},
+                             {'$set': {
+                                   'draft.itemProperties.$.value': factnum
+                               }
+                               })
 
-
+checkjson = col.find_one({"itemType":"HomeContent"})
+print(checkjson['draft'])
 

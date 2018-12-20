@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <link rel="icon" type="image/png" href="{% static "images/download.png" %}">
-        <title>TEST AUTOMATION - API GATEWAY </title>
+        <title> GATE - API testing </title>
      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -182,7 +182,7 @@
             e.preventDefault();
             if(x1 < max_fields){
                 x1++;
-$(wrapper1).append('<div class="row"><div class="form-group">\n\n' +
+                $(wrapper1).append('<div class="row"><div class="form-group">\n\n' +
                      '<div class="list-group">\n' +
                      '<div class="col-sm-8">\n'+
                      '<p class=list-group-item>\n' +
@@ -581,17 +581,28 @@ function showPage() {
     transform: scale(1);
   }
 }
-
+    /* test builds - button */
+      /* Icon when the collapsible content is shown */
+  .buildbt:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e114";
+    float: right;
+    margin-left: 15px;
+  }
+  /* Icon when the collapsible content is hidden */
+  .buildbt.collapsed:after {
+    content: "\e080";
+  }
 
 
 </style>
 </head>
-<body onload="loadfunc()" style="margin:0;">
+<body background={% static "images/greybkdrop.jpg" %} onload="loadfunc()" style="margin:0;">
 
 <div id="loader"></div>
 <div class="container" id="main-page" class="animate-bottom">
           {% if user.is_authenticated %}
-  <nav class="navbar navbar-inverse">
+<!--  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
      <ul>
@@ -608,7 +619,45 @@ function showPage() {
 
     </ul>
   </div>
-</nav>
+</nav>-->
+                 <nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="color:#90c3e1" href="#">G A T E</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'tag_home' %}">Dashboard</a></li>
+          <li><a href="{% url 'beanstalk_home' %}">Beanstalk</a></li>
+          <li><a href="{% url 'test_chamber_home' %}">Test Chamber</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Rating Engine<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="{% url 'inspector_tag' %}">Inspector</a></li>
+              <li><a href="{% url 'calculator_tag' %}">Calculator</a></li>
+              <li><a href="{% url 'rating_chamber' %}">Test Build</a></li>
+
+            </ul>
+          </li>
+        </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+                  <li><a href="{% url 'tag_user_logout' %}">Logout</a> </li>
+              </ul>
+
+      </div>
+    </div>
+  </div>
+                      </nav>
+
+
             {% endif %}
     </div>
 <br>
@@ -616,13 +665,21 @@ function showPage() {
  <div class="container">
  {% block body_block %}
           <meta http-equiv="refresh" content="10" />
+      <div class="container-fluid bg-2 text-left">
+                           <h4 class="beantitle" style="font-weight:bold;font-family:sans-serif; padding: 30px 0;color: #4d559c"> Welcome to the TAG v1.0
+                               an online Automation portal for Standard Bank's API channel </h4>
+</div>
+      <p>
+        <a href="#" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-paperclip"></span> {{ text }}
+        </a>
+      </p>
 
-            <div class="col-sm-3">
+  <div class="col-sm-3">
                 <img width="200" height="200" src="{% static "images/group-logo-small.svg" %}"/>
             </div>
-            <div class="col-sm-8">
-                <br>
-                <h3 style="font-family:'Courier New';color:darkblue">{{ text }}</h3>
+
+     <div class="col-sm-8">
                 <br>
 <div class="row">
     <div class="col-sm-8">

@@ -1,10 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "tag_home.html"  %}
+{% load static %}
+{% block body_block %}
+    <h3 class="beantitle" style="font-weight:bold;font-family:sans-serif; padding: 30px 0;color: darkslateblue">
+    Calculator - Rating Engine</h3>
+    <br>
+
+          <div class="panel panel-primary">
+    <div class="panel-body">
+     <div class="row">
+      <div class="col-sm-8"><h5>PRORATA CALCULATOR :</h5></div>
+      <div class="col-sm-4">
+         <p class="procalexe">
+             <button class="btn btn-primary active"><span class="glyphicon glyphicon-play"></span>Calculate</button>
+         </p>
+                    <div class="prload">
+                    </div>
+
+      </div>
+    </div>
+
+
+        {% if prcalc == 'completed' %}
+             <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Policy effective_date</th>
+        <th>Debit order date</th>
+        <th>Premium</th>
+        <th>Prorata Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+            {% for prdat in prlist %}
+
+      <tr>
+        <td>{{ prdat.Effective_Date }}</td>
+        <td>{{ prdat.Debit_Date }}</td>
+        <td>{{ prdat.Premium }}</td>
+        <td>{{ prdat.Amount }}</td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+            {% else %}
+            <button class="btn btn-default" data-toggle="collapse" data-target="#proratab">View Prorata transaction base table</button>
+
+        {% endif %}
+<div id="proratab" class="collapse">
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Policy effective_date</th>
+        <th>Debit order date</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>	19-Dec-17	</td><td>	30-Dec-17	</td></tr>
+<tr><td>	19-Dec-17	</td><td>	25-Dec-17	</td></tr>
+<tr><td>	19-Dec-17	</td><td>	01-Jan-18	</td></tr>
+<tr><td>	19-Dec-17	</td><td>	19-Jan-18	</td></tr>
+<tr><td>	19-Dec-17	</td><td>	19-Jan-18	</td></tr>
+<tr><td>	19-Dec-17	</td><td>	21-Jan-18	</td></tr>
+<tr><td>	19-Dec-17	</td><td>	22-Dec-17	</td></tr>
+<tr><td>	17-Feb-18	</td><td>	28-Feb-18	</td></tr>
+<tr><td>	17-Feb-18	</td><td>	28-Feb-18	</td></tr>
+<tr><td>	17-Feb-18	</td><td>	05-Mar-18	</td></tr>
+<tr><td>	17-Feb-18	</td><td>	01-Mar-18	</td></tr>
+<tr><td>	28-Feb-18	</td><td>	29-Mar-18	</td></tr>
+<tr><td>	28-Feb-18	</td><td>	31-Mar-18	</td></tr>
+<tr><td>	15-Mar-18	</td><td>	20-Mar-18	</td></tr>
+<tr><td>	11-Jul-18	</td><td>	10-Aug-18	</td></tr>
+<tr><td>	10-Jul-18	</td><td>	10-Aug-18	</td></tr>
+<tr><td>	09-Jul-18	</td><td>	10-Aug-18	</td></tr>
+<tr><td>	09-Jul-18	</td><td>	11-Aug-18	</td></tr>
+<tr><td>	09-Jul-18	</td><td>	12-Aug-18	</td></tr>
+<tr><td>	01-Aug-18	</td><td>	01-Aug-18	</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+    </div>
+          </div>
+
+<script>
+
+    $(document).ready(function() {
+
+    var procalst = $(".procalexe");
+    var prlwrap = $(".prload");
+
+
+            $(procalst).click(function(e){
+                $(procalst).hide();
+                e.preventDefault();
+                    $(prlwrap).append('<div class="loading"><h5>Executing...</h5>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                                            '  <div class="loading-bar"></div>\n' +
+                                            '  <div class="loading-bar"></div>\n' +
+
+
+                    '</div>');
+                                  document.location.href="{% url "calculator_exe" %}"
+
+        });
+    });
+
+</script>
+{% endblock %}

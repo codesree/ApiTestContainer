@@ -28,7 +28,7 @@
                {% if tstat == 'hcdone' %}
               {% if testrep and logfile %}
   <blockquote>
-    <p><kbd>Execution Completed succcessfully......</kbd></p>
+      <h5><p class="text-success">Execution Completed successfully......</p></h5>
       <br>
     <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-default btn-sm btn-block">Download test log</button></a></div>
                       <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info btn-sm btn-block">View test report</button></a></div>
@@ -58,7 +58,7 @@
       </div>
     </div>
                 {% endif %}
-        <div class="panel panel-info">
+        <div class="panel panel-default">
       <div class="panel-heading">
         <p class="panel-title">
           <a data-toggle="collapse" href="#collapse1">Test criteria's defined for HomeContents</a>
@@ -93,6 +93,79 @@
     </div>
     </div>
 
+<!------------ TEST SUITE FOR BUILDING ------------------>
+          <div class="panel panel-primary">
+    <div class="panel-body">
+        {% if tstat == 'bddone' %}
+                <div class="row">
+      <div class="col-sm-8"><h5>TEST CASES - BUILDING:</h5></div>
+      <div class="col-sm-4">
+         <p class="bdretestexe"><button class="btn btn-primary active"><span class="glyphicon glyphicon-play"></span>Re-Run</button></p>
+                    <div class="bdload">
+    </div>
+
+      </div>
+    </div>
+    <div class="row">
+        <div class="exestat">
+               {% if tstat == 'bddone' %}
+              {% if testrep and logfile %}
+  <blockquote>
+      <h5><p class="text-success">Execution Completed successfully......</p></h5>
+      <br>
+    <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-default btn-sm btn-block">Download test log</button></a></div>
+                      <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info btn-sm btn-block">View test report</button></a></div>
+</footer>
+  </blockquote>
+              {% else %}
+                    <blockquote>
+    <p><code>Execution Failed.............please see below info</code></p>
+                        <br>
+    <footer>Problem might have been with test report/test log generation. Please contact admin for more clarity ..</p>
+
+</footer>
+  </blockquote>
+              {% endif %}
+          {% endif %}
+
+
+        </div>
+    </div>
+            {% else %}
+                <div class="row">
+      <div class="col-sm-6"><h5>TEST CASES - BUILDING:</h5></div>
+      <div class="col-sm-6">
+                 <p class="bdtestexe"><button class="btn btn-primary"><span class="glyphicon glyphicon-play"></span> Run</button></p>
+          <div class="bdload">
+    </div>
+      </div>
+    </div>
+                {% endif %}
+        <div class="panel panel-default">
+      <div class="panel-heading">
+        <p class="panel-title">
+          <a data-toggle="collapse" href="#collapse5">Test criteria's defined for Building</a>
+        </p>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <ul class="list-group">
+                      <li class="list-group-item">test_building_asset_with_electricalMotor</li>
+                      <li class="list-group-item">test_building_asset_with_RoofType</li>
+                      <li class="list-group-item">test_building_asset_with_ppolFrequency</li>
+                      <li class="list-group-item">test_building_asset_with_typeOfDwellingCode</li>
+                      <li class="list-group-item">test_building_asset_with_unoccupiedDays</li>
+                      <li class="list-group-item">test_building_asset_with_landSlip</li>
+                      <li class="list-group-item">test_building_asset_with_itemStatus</li>
+                      <li class="list-group-item">test_building_asset_with_useOfResidence</li>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+
+
 <!-------------TEST EXECUTION CONTAINER FOR MOTOR VEHICLES ---------------------->
           <div class="panel panel-primary">
     <div class="panel-body">
@@ -111,7 +184,7 @@
                {% if tstat == 'mvdone' %}
               {% if testrep and logfile %}
   <blockquote>
-    <p><kbd>Execution Completed successfully......</kbd></p>
+      <h5><p class="text-success">Execution Completed successfully......</p></h5>
       <br>
     <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-default btn-sm btn-block">Download test log</button></a></div>
                       <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info btn-sm btn-block">View test report</button></a></div>
@@ -141,7 +214,7 @@
       </div>
     </div>
                 {% endif %}
-            <div class="panel panel-info">
+            <div class="panel panel-default">
       <div class="panel-heading">
         <p class="panel-title">
           <a data-toggle="collapse" href="#collapse2">Test criteria's defined for Motor Vehicle</a>
@@ -191,7 +264,7 @@
                {% if tstat == 'ardone' %}
               {% if testrep and logfile %}
   <blockquote>
-    <p><kbd>Execution Completed successfully......</kbd></p>
+      <h5><p class="text-success">Execution Completed successfully......</p></h5>
       <br>
     <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-default btn-sm btn-block">Download log</button></a></div>
                       <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info btn-sm btn-block">View test report</button></a></div>
@@ -221,7 +294,7 @@
       </div>
     </div>
                 {% endif %}
-    <div class="panel panel-info">
+    <div class="panel panel-default">
       <div class="panel-heading">
         <p class="panel-title">
           <a data-toggle="collapse" href="#collapse4">Test criteria's defined for AllRisks</a>
@@ -262,7 +335,7 @@
                {% if tstat == 'pldone' %}
               {% if testrep and logfile %}
   <blockquote>
-    <p><kbd>Execution Completed successfully......</kbd></p>
+      <h5><p class="text-success">Execution Completed successfully......</p></h5>
       <br>
     <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-default btn-sm btn-block">Download test log</button></a></div>
                       <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info btn-sm btn-block">View test report</button></a></div>
@@ -328,6 +401,8 @@ $(document).ready(function() {
     var mvlwrap = $(".mvload");
     var arlwrap = $(".arload");
     var pllwrap = $(".plload");
+    var bdlwrap = $(".bdload");
+
 
 
     var hcteststart = $(".hctestexe");
@@ -341,6 +416,9 @@ $(document).ready(function() {
 
     var plteststart = $(".pltestexe");
     var plretest = $(".plretestexe");
+
+    var bdteststart = $(".bdtestexe");
+    var bdretest = $(".bdretestexe");
 
     var exestat = $(".exestat");
 
@@ -362,7 +440,7 @@ $(document).ready(function() {
         });
 
         $(hcretest).click(function(e){
-                $(hcretest).hide();
+            $(hcretest).hide();
                 $(exestat).hide();
                         e.preventDefault();
                           $(hclwrap).append('<div class="loading"><h5>Executing...</h5>\n' +
@@ -378,6 +456,43 @@ $(document).ready(function() {
                                   document.location.href="{% url "asset_homecontent_suite" %}"
 
         });
+
+        $(bdretest).click(function(e){
+                $(bdretest).hide();
+                $(exestat).hide();
+                        e.preventDefault();
+                          $(bdlwrap).append('<div class="loading"><h5>Executing...</h5>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                                            '  <div class="loading-bar"></div>\n' +
+                                            '  <div class="loading-bar"></div>\n' +
+
+
+                    '</div>');
+                                  document.location.href="{% url "asset_building_suite" %}"
+
+        });
+
+        $(bdteststart).click(function(e){
+            $(bdteststart).hide();
+                        e.preventDefault();
+                          $(bdlwrap).append('<div class="loading"><h5>Executing...</h5>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                    '  <div class="loading-bar"></div>\n' +
+                                            '  <div class="loading-bar"></div>\n' +
+                                            '  <div class="loading-bar"></div>\n' +
+
+
+                    '</div>');
+                                  document.location.href="{% url "asset_building_suite" %}"
+
+        });
+
+
 
         $(plteststart).click(function(e){
             $(plteststart).hide();

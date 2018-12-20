@@ -42,19 +42,26 @@ urlpatterns = [
 
     path('load_check/',views.startp),
 
+    #--------------------- RATING ENGINE - PATH ----------------------
     # INSPECTOR
     path('inspector_tag/',views.inspector_tag,name='inspector_tag'),
     path('inspector_log/', views.download_trace, name='inspector_log'),
+
+    # CALCULATOR
+    path('calculator_tag/',views.calculator_tag,name='calculator_tag'),
+    path('calculator_exe/', views.calculator_exe, name='calculator_exe'),
 
     # -------------------- TEST CHAMBER - PATH ------------------------
     path('test_chamber_home/', views.test_chamber, name="test_chamber_home"),
     path('test_suite_home/',views.test_suite_home,name='test_suite_home'),
     path('asset_end_to_end_home/',views.asset_end_to_end_home,name='asset_end_to_end_home'),
+    path('rating_chamber/', views.rating_chamber, name='rating_chamber'),
 
     # TEST SUITE FUNCTIONS:
     path('asset_homecontent_suite/',views.asset_homecon_suite,name='asset_homecontent_suite'),
     path('asset_end_to_end/', views.asset_end_to_end, name='asset_end_to_end'),
     path('asset_vehicle_suite/',views.asset_vehicle_suite,name='asset_vehicle_suite'),
+    path('asset_building_suite/', views.asset_building_suite, name='asset_building_suite'),
     path('asset_allrisks_suite/', views.asset_allrisk_suite, name='asset_allrisk_suite'),
     path('asset_personal_liability/', views.asset_personal_liability_suite, name='asset_personal_liability'),
 

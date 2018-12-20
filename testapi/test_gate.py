@@ -7,257 +7,428 @@ import uuid,os
 from oauthlib import oauth2
 from requests.auth import HTTPBasicAuth
 
-
+from .config import *
 
 
 class Asset_stack():
     def __init__(self):
         global con
-        db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        # db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        db = MongoClient()
         con = db['ApiTestContainer']
 
     def update_homecontent_item(self,rkey,rfact,rcount,tinfo):
 
+        # col = con['homecontent_items']
+        # reqjson = col.find_one({'itemType':'HomeContent'})
+
+        
         col = con['homecontent_items']
+        reqjson = col.find_one({"itemType": "HomeContent"})
+        del reqjson['_id']
+        col = con['homecontent_item_draft']
+        col.update(
+            {"itemType":"HomeContent"},
+            {
+                "$set":
+                {
+                    "draft":reqjson
+                }
+            })
+
         ucount = 0
         print("Update started for home_content testcase.....")
-        while ucount < rcount:
-            if tinfo == "rate_enums":
-                print('ucount:',ucount)
-                for factnum in rfact.values():
-                    if rkey == "discountType":
-                        col.update({"itemType" : "HomeContent"},
-                                   {'$set': {
-                                       'discountDetails.discountType' : factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
+        if tinfo == "rate_enums":
+            print('ucount:', ucount)
+            for factnum in rfact.values():
+                if rkey == "discountType":
+                    col.update({"itemType": "HomeContent"},
+                               {'$set': {
+                                   'draft.discountDetails.discountType': factnum
+                               }
+                               }
+                               )
+                    self.process_allrisks_item(factnum)
 
-                    elif rkey == "policyFrequency":
-                        col.update({"itemType" : "HomeContent"},
-                                   {'$set': {
-                                       'policyFrequency' : factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
-                    else:
-                        col.update({'itemProperties.name': "" + rkey + ""},
-                                   {'$set': {
-                                       'itemProperties.$.value': factnum
-                                   }
-                                   }
-                                   )
-                        self.process_homecontent_item(ucount)
-            elif tinfo == "rate_keys":
-                for factnum in rfact.keys():
-                    if rkey == "discountType":
-                        col.update({"itemType": "HomeContent"},
-                                   {'$set': {
-                                       'discountDetails.discountType': factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
+                elif rkey == "policyFrequency":
+                    col.update({"itemType": "HomeContent"},
+                               {'$set': {
+                                   'draft.policyFrequency': factnum
+                               }
+                               }
+                               )
+                    self.process_homecontent_item(factnum)
+                else:
+                    col.update({'draft.itemProperties.name': "" + rkey + ""},
+                               {'$set': {
+                                   'draft.itemProperties.$.value': factnum
+                               }
+                               }
+                               )
+                    self.process_homecontent_item(factnum)
+        elif tinfo == "rate_keys":
+            for factnum in rfact.keys():
+                if rkey == "discountType":
+                    col.update({"itemType": "HomeContent"},
+                               {'$set': {
+                                   'draft.discountDetails.discountType': factnum
+                               }
+                               }
+                               )
+                    self.process_allrisks_item(factnum)
 
-                    elif rkey == "policyFrequency":
-                        col.update({"itemType": "HomeContent"},
-                                   {'$set': {
-                                       'policyFrequency': factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
-                    else:
-                        col.update({'itemProperties.name': "" + rkey + ""},
-                                   {'$set': {
-                                       'itemProperties.$.value': factnum
-                                   }
-                                   }
-                                   )
-                        self.process_homecontent_item(ucount)
-            ucount = ucount + 1
+                elif rkey == "policyFrequency":
+                    col.update({"itemType": "HomeContent"},
+                               {'$set': {
+                                   'draft.policyFrequency': factnum
+                               }
+                               }
+                               )
+                    self.process_homecontent_item(factnum)
+                else:
+                    col.update({'draft.itemProperties.name': "" + rkey + ""},
+                               {'$set': {
+                                   'draft.itemProperties.$.value': factnum
+                               }
+                               }
+                               )
+                    self.process_homecontent_item(factnum)
 
     def update_allrisks_item(self, rkey, rfact, rcount, tinfo):
 
         col = con['allrisks_item']
         ucount = 0
         print("Update started for AllRisks testcase.....")
-        while ucount < rcount:
-            if tinfo == "rate_enums":
-                print('ucount:', ucount)
-                for factnum in rfact.values():
-                    if rkey == "discountType":
-                        col.update({"itemType" : "AllRisk"},
-                                   {'$set': {
-                                       'discountDetails.discountType' : factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
+        if tinfo == "rate_enums":
+            print('ucount:', ucount)
+            for factnum in rfact.values():
+                if rkey == "discountType":
+                    col.update({"itemType": "AllRisk"},
+                               {'$set': {
+                                   'discountDetails.discountType': factnum
+                               }
+                               }
+                               )
+                    self.process_allrisks_item(factnum)
 
-                    elif rkey == "policyFrequency":
-                        col.update({"itemType" : "AllRisk"},
-                                   {'$set': {
-                                       'policyFrequency' : factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
+                elif rkey == "policyFrequency":
+                    col.update({"itemType": "AllRisk"},
+                               {'$set': {
+                                   'policyFrequency': factnum
+                               }
+                               }
+                               )
+                    self.process_allrisks_item(factnum)
 
-                    else:
-                        descrp = "automated app - " + factnum
-                        col.update({"itemType":"AllRisk"},
-                        {'$set':{
-                            'description':descrp
-                        }})
-                        col.update({'itemProperties.name': "" + rkey + ""},
-                                   {'$set': {
-                                       'itemProperties.$.value': factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
-            elif tinfo == "rate_keys":
-                for factnum in rfact.keys():
-                    if rkey == "discountType":
-                        col.update({"itemType": "AllRisk"},
-                                   {'$set': {
-                                       'discountDetails.discountType': factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
-
-                    elif rkey == "policyFrequency":
-                        col.update({"itemType" : "AllRisk"},
-                                   {'$set': {
-                                       'policyFrequency' : factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
-                    else:
-                        descrp = "automated enum- " + factnum
-                        col.update({"itemType":"AllRisk"},
-                        {'$set':{
-                            'description':descrp
-                        }})
-                        col.update({'itemProperties.name': "" + rkey + ""},
-                                   {'$set': {
-                                       'itemProperties.$.value': factnum
-                                   }
-                                   }
-                                   )
-                        self.process_allrisks_item(ucount)
-            ucount = ucount + 1
-
-    def update_vehicle_item(self,rkey,rfact,rcount,tinfo):
-
-        col = con['vehicle_item']
-        print("rcount is..",rcount)
-        ucount = 0
-        while ucount < rcount:
-            if tinfo == "rate_enums":
-                for factnum in rfact.values():
+                else:
+                    descrp = "automated app - " + factnum
+                    col.update({"itemType": "AllRisk"},
+                               {'$set': {
+                                   'description': descrp
+                               }})
                     col.update({'itemProperties.name': "" + rkey + ""},
                                {'$set': {
                                    'itemProperties.$.value': factnum
                                }
                                }
                                )
-                    self.process_vehicle_item(ucount)
-            elif tinfo == "rate_keys":
-                for factnum in rfact.keys():
+                    self.process_allrisks_item(factnum)
+        elif tinfo == "rate_keys":
+            for factnum in rfact.keys():
+                if rkey == "discountType":
+                    col.update({"itemType": "AllRisk"},
+                               {'$set': {
+                                   'discountDetails.discountType': factnum
+                               }
+                               }
+                               )
+                    self.process_allrisks_item(factnum)
+
+                elif rkey == "policyFrequency":
+                    col.update({"itemType": "AllRisk"},
+                               {'$set': {
+                                   'policyFrequency': factnum
+                               }
+                               }
+                               )
+                    self.process_allrisks_item(factnum)
+                else:
+                    descrp = "automated enum- " + factnum
+                    col.update({"itemType": "AllRisk"},
+                               {'$set': {
+                                   'description': descrp
+                               }})
                     col.update({'itemProperties.name': "" + rkey + ""},
                                {'$set': {
-                                   'itemProperties.$.value': ""+factnum+""
+                                   'itemProperties.$.value': factnum
                                }
                                }
                                )
-                    self.process_vehicle_item(ucount)
-            elif tinfo == "cars":
-                    card = rfact[ucount]
-                    print("Build for",card['make'],"--",card['model'])
-                    maked = card['make']
-                    modeld = card['model']
-                    yeard = card['year']
-                    col.update({'itemProperties.name': "Make"},
-                               {'$set': {
-                                   'itemProperties.$.value': "" + maked + ""
-                               }
-                               }
-                               )
-                    col.update({'itemProperties.name': "Model"},
-                               {'$set': {
-                                   'itemProperties.$.value': "" + modeld + ""
-                               }
-                               }
-                               )
-                    col.update({'itemProperties.name': "Year"},
-                               {'$set': {
-                                   'itemProperties.$.value': "" + yeard + ""
-                               }
-                               }
-                               )
+                    self.process_allrisks_item(factnum)
 
-                    self.process_vehicle_item(ucount)
+    def update_vehicle_item(self,rkey,rfact,rcount,tinfo):
 
-            ucount = ucount + 1
+        col = con['vehicle_item']
+        reqjson = col.find_one({"itemType": "Vehicle"})
+        del reqjson['_id']
+        col = con['vehicle_item_draft']
+        col.update(
+            {"itemType":"Vehicle"},
+            {
+                "$set":
+                {
+                    "draft":reqjson
+                }
+            })
+        ucount = 0
+        if tinfo == "rate_enums":
+            for factnum in rfact.values():
+                col.update({'draft.itemProperties.name': "" + rkey + ""},
+                           {'$set': {
+                               'draft.itemProperties.$.value': factnum
+                           }
+                           }
+                           )
+                self.process_vehicle_item(ucount)
+        elif tinfo == "rate_keys":
+            for factnum in rfact.keys():
+                col.update({'draft.itemProperties.name': "" + rkey + ""},
+                           {'$set': {
+                               'draft.itemProperties.$.value': "" + factnum + ""
+                           }
+                           }
+                           )
+                self.process_vehicle_item(ucount)
+        elif tinfo == "CARS":
+            print(" inside cars make model year........")
+            print(rfact)
+            for factnum in rfact:
+                card = factnum
+                print("Build for", card['make'], "--", card['model'])
+                maked = card['make']
+                modeld = card['model']
+                yeard = card['year']
+                col.update({'draft.itemProperties.name': "Make"},
+                           {'$set': {
+                               'draft.itemProperties.$.value': "" + maked + ""
+                           }
+                           }
+                           )
+                col.update({'draft.itemProperties.name': "Model"},
+                           {'$set': {
+                               'draft.itemProperties.$.value': "" + modeld + ""
+                           }
+                           }
+                           )
+                col.update({'draft.itemProperties.name': "Year"},
+                           {'$set': {
+                               'draft.itemProperties.$.value': "" + yeard + ""
+                           }
+                           }
+                           )
+
+                self.process_vehicle_item(modeld)
+        elif tinfo == "CARS_MMcode":
+            print(" inside cars make model year........")
+            print(rfact)
+            for factnum in rfact:
+                card = factnum
+                print("Build for", card['MMCode'], "--", card['Year'])
+                mmcode = card['MMCode']
+                year = card['Year']
+                col.update({'draft.itemProperties.name': "Make"},
+                           {'$set': {
+                               'draft.itemProperties.$.value': ""
+                           }
+                           }
+                           )
+                col.update({'draft.itemProperties.name': "Model"},
+                           {'$set': {
+                               'draft.itemProperties.$.value': ""
+                           }
+                           }
+                           )
+                col.update({'draft.itemProperties.name': "MMCode"},
+                           {'$set': {
+                               'draft.itemProperties.$.value': "" + mmcode + ""
+                           }
+                           }
+                           )
+                col.update({'draft.itemProperties.name': "Year"},
+                           {'$set': {
+                               'draft.itemProperties.$.value': "" + year + ""
+                           }
+                           }
+                           )
+
+                self.process_vehicle_item(mmcode)
 
     def update_personal_liability_item(self,rkey,rfact,rcount,tinfo):
 
         col = con['personal_liability_item']
         print("rcount is..",rcount)
         ucount = 0
-        while ucount < rcount:
-            if tinfo == "rate_enums":
-                for factnum in rfact.values():
-                    col.update({'itemProperties.name': "" + rkey + ""},
-                               {'$set': {
-                                   'itemProperties.$.value': factnum
-                               }
-                               }
-                               )
-                    self.process_vehicle_item(ucount)
-            elif tinfo == "rate_keys":
-                for factnum in rfact.keys():
-                    col.update({'itemProperties.name': "" + rkey + ""},
-                               {'$set': {
-                                   'itemProperties.$.value': ""+factnum+""
-                               }
-                               }
-                               )
-                    self.process_vehicle_item(ucount)
-            elif tinfo == "cars":
-                    card = rfact[ucount]
-                    print("Build for",card['make'],"--",card['model'])
-                    maked = card['make']
-                    modeld = card['model']
-                    yeard = card['year']
-                    col.update({'itemProperties.name': "Make"},
-                               {'$set': {
-                                   'itemProperties.$.value': "" + maked + ""
-                               }
-                               }
-                               )
-                    col.update({'itemProperties.name': "Model"},
-                               {'$set': {
-                                   'itemProperties.$.value': "" + modeld + ""
-                               }
-                               }
-                               )
-                    col.update({'itemProperties.name': "Year"},
-                               {'$set': {
-                                   'itemProperties.$.value': "" + yeard + ""
-                               }
-                               }
-                               )
 
-                    self.process_vehicle_item(ucount)
+        if tinfo == "rate_enums":
+            for factnum in rfact.values():
+                col.update({'itemProperties.name': "" + rkey + ""},
+                           {'$set': {
+                               'itemProperties.$.value': factnum
+                           }
+                           }
+                           )
+                self.process_vehicle_item(factnum)
+        elif tinfo == "rate_keys":
+            for factnum in rfact.keys():
+                col.update({'itemProperties.name': "" + rkey + ""},
+                           {'$set': {
+                               'itemProperties.$.value': "" + factnum + ""
+                           }
+                           }
+                           )
+                self.process_vehicle_item(factnum)
+        elif tinfo == "cars":
+            card = rfact[ucount]
+            print("Build for", card['make'], "--", card['model'])
+            maked = card['make']
+            modeld = card['model']
+            yeard = card['year']
+            col.update({'itemProperties.name': "Make"},
+                       {'$set': {
+                           'itemProperties.$.value': "" + maked + ""
+                       }
+                       }
+                       )
+            col.update({'itemProperties.name': "Model"},
+                       {'$set': {
+                           'itemProperties.$.value': "" + modeld + ""
+                       }
+                       }
+                       )
+            col.update({'itemProperties.name': "Year"},
+                       {'$set': {
+                           'itemProperties.$.value': "" + yeard + ""
+                       }
+                       }
+                       )
 
-            ucount = ucount + 1
+            self.process_vehicle_item(ucount)
+
+
+    # def update_building_item(self,rkey,rfact,rcount,tinfo):
+    #
+    #     col = con['building_item']
+    #     print("rcount is..",rcount)
+    #     ucount = 0
+    #     while ucount < rcount:
+    #         if tinfo == "rate_enums":
+    #             for factnum in rfact.values():
+    #                 col.update({'itemProperties.name': "" + rkey + ""},
+    #                            {'$set': {
+    #                                'itemProperties.$.value': factnum
+    #                            }
+    #                            }
+    #                            )
+    #                 self.process_building_item(ucount)
+    #         elif tinfo == "rate_keys":
+    #             for factnum in rfact.keys():
+    #                 col.update({'itemProperties.name': "" + rkey + ""},
+    #                            {'$set': {
+    #                                'itemProperties.$.value': ""+factnum+""
+    #                            }
+    #                            }
+    #                            )
+    #                 self.process_building_item(ucount)
+    #         elif tinfo == "cars":
+    #                 card = rfact[ucount]
+    #                 print("Build for",card['make'],"--",card['model'])
+    #                 maked = card['make']
+    #                 modeld = card['model']
+    #                 yeard = card['year']
+    #                 col.update({'itemProperties.name': "Make"},
+    #                            {'$set': {
+    #                                'itemProperties.$.value': "" + maked + ""
+    #                            }
+    #                            }
+    #                            )
+    #                 col.update({'itemProperties.name': "Model"},
+    #                            {'$set': {
+    #                                'itemProperties.$.value': "" + modeld + ""
+    #                            }
+    #                            }
+    #                            )
+    #                 col.update({'itemProperties.name': "Year"},
+    #                            {'$set': {
+    #                                'itemProperties.$.value': "" + yeard + ""
+    #                            }
+    #                            }
+    #                            )
+    #
+    #                 self.process_vehicle_item(ucount)
+    #
+    #         ucount = ucount + 1
+
+    def update_building_item(self,rkey,rfact,rcount,tinfo):
+
+        col = con['building_item']
+        print("rcount is..",rcount)
+        ucount = 0
+
+        if tinfo == "rate_enums":
+            print('ucount:', ucount)
+            for factnum in rfact.values():
+                if rkey == "discountType":
+                    col.update({"draft.itemType": "Building"},
+                               {'$set': {
+                                   'draft.discountDetails.discountType': factnum
+                               }
+                               }
+                               )
+                    self.process_building_item(factnum)
+
+                elif rkey == "policyFrequency":
+                    col.update({"itemType": "Building"},
+                               {'$set': {
+                                   'policyFrequency': factnum
+                               }
+                               }
+                               )
+                    self.process_building_item(factnum)
+                else:
+                    col.update({'draft.itemProperties.name': "" + rkey + ""},
+                               {'$set': {
+                                   'draft.itemProperties.$.value': factnum
+                               }
+                               }
+                               )
+                    self.process_building_item(factnum)
+        elif tinfo == "rate_keys":
+            for factnum in rfact.keys():
+                if rkey == "discountType":
+                    col.update({"draft.itemType": "Building"},
+                               {'$set': {
+                                   'draft.discountDetails.discountType': factnum
+                               }
+                               }
+                               )
+                    self.process_building_item(factnum)
+
+                elif rkey == "policyFrequency":
+                    col.update({"itemType": "Building"},
+                               {'$set': {
+                                   'policyFrequency': factnum
+                               }
+                               }
+                               )
+                    self.process_building_item(factnum)
+                else:
+                    col.update({'draft.itemProperties.name': "" + rkey + ""},
+                               {'$set': {
+                                   'draft.itemProperties.$.value': factnum
+                               }
+                               }
+                               )
+                    self.process_building_item(factnum)
 
 
     def build_asset_stack(self,stack_name):
@@ -269,15 +440,16 @@ class Asset_stack():
         elif stack_name == "Motor_vehicles":
             col = con['vehicle_asset']
             asset_data = col.find_one({'name': 'Vehicles'})
-        elif stack_name == "Building":
-            col = con['vehicle_asset']
-            asset_data = col.find_one({'name': 'Vehicles'})
+        elif stack_name == "Buildings":
+            col = con['building_asset']
+            asset_data = col.find_one({'name': 'Buildings'})
         elif stack_name == "AllRisks":
             col = con['allrisks_asset']
             asset_data = col.find_one({'name': 'All Risks'})
         elif stack_name =="personal_liability":
             col = con['personal_liability_asset']
             asset_data = col.find_one({'name': 'Personal Liabilities'})
+
 
         del asset_data['_id']
 
@@ -298,6 +470,7 @@ class Asset_stack():
                    }
                    )
 
+        # business rule consideration - test cases with Allrisks section should go along with vehicle and homecontent
         if stack_name == "AllRisks":
             col = con['vehicle_asset']
             vasset_data = col.find_one({'name': 'Vehicles'})
@@ -326,7 +499,22 @@ class Asset_stack():
                        }
                        }
                        )
+        # business rule consideration - test cases with Homecontent/personal_liability sections should go along with allrisks
+        elif stack_name == "Home_contents" or stack_name == "personal_liability":
 
+            col = con['allrisks_asset']
+            aasset_data = col.find_one({'name': 'All Risks'})
+
+            del aasset_data['_id']
+
+            col = con['asset_api']
+
+            col.update({'quoteHeader.srsId': 'SRS_ID'},
+                       {'$addToSet': {
+                           'sections': aasset_data
+                       }
+                       }
+                       )
 
 
         asset_req = col.find_one({"quoteHeader.srsId" : "SRS_ID"})
@@ -338,50 +526,53 @@ class Asset_stack():
         return asset_req
 
 
-
-
-
     def process_homecontent_item(self,ucount):
-        col = con['homecontent_items']
+        col = con['homecontent_item_draft']
         build_item = col.find_one({"itemType":"HomeContent"})
 
-        del build_item['_id']
+        build_item = build_item['draft']
 
         self.asset_content(build_item,ucount)
 
 
-    def process_personal_liability_item(self,ucount):
-        col = con['personal_liability_item']
+    def process_building_item(self,factnum):
+        col = con['building_item_draft']
+        build_item = col.find_one({"itemType":"Building"})
+
+        build_item = build_item['draft']
+
+        self.asset_building(build_item,factnum)
+
+
+    def process_personal_liability_item(self,factnum):
+        col = con['personal_liability_item_draft']
         build_item = col.find_one({"itemType":"PersonalLiability"})
 
-        del build_item['_id']
+        build_item = build_item['draft']
 
-        self.asset_content(build_item,ucount)
+        self.asset_content(build_item,factnum)
 
-
-    def process_vehicle_item(self,ucount):
-        col = con['vehicle_item']
+    def process_vehicle_item(self,factnum):
+        col = con['vehicle_item_draft']
         build_item = col.find_one({'itemType': 'Vehicle'})
 
-        del build_item['_id']
+        build_item = build_item['draft']
 
-        self.asset_vehicle(build_item,ucount)
+        self.asset_vehicle(build_item,factnum)
 
     def process_allrisks_item(self,ucount):
-        col = con['allrisks_item']
+        col = con['allrisks_item_draft']
         build_item = col.find_one({'itemType': 'AllRisk'})
 
-        del build_item['_id']
+        build_item = build_item['draft']
 
         self.asset_allrisks(build_item,ucount)
 
-
-    def asset_content(self,build_item,ucount):
+    def asset_content(self,build_item,factnum):
 
         col = con['homecontent_asset']
 
-        if ucount == 0:
-            col.update({'name': 'Home Contents'},
+        col.update({'name': 'Home Contents'},
                        {
                            '$set':
                                {
@@ -397,13 +588,13 @@ class Asset_stack():
                            }
                    }
                    )
+        self.submitapi(factnum,"homecontent")
 
-    def asset_personal_liability(self,build_item,ucount):
+    def asset_personal_liability(self,build_item,factnum):
 
         col = con['personal_liability_asset']
 
-        if ucount == 0:
-            col.update({'name': 'Personal Liabilities'},
+        col.update({'name': 'Personal Liabilities'},
                        {
                            '$set':
                                {
@@ -419,13 +610,13 @@ class Asset_stack():
                            }
                    }
                    )
+        self.submitapi(factnum,"personalliability")
 
-    def asset_allrisks(self,build_item,ucount):
+    def asset_allrisks(self,build_item,factnum):
 
         col = con['allrisks_asset']
 
-        if ucount == 0:
-            col.update({'name': 'All Risks'},
+        col.update({'name': 'All Risks'},
                        {
                            '$set':
                                {
@@ -441,13 +632,13 @@ class Asset_stack():
                            }
                    }
                    )
+        self.submitapi(factnum,"allrisks")
 
-    def asset_vehicle(self,build_item,ucount):
+    def asset_vehicle(self,build_item,factnum):
 
         col = con['vehicle_asset']
 
-        if ucount == 0:
-            col.update({'name':'Vehicles'},
+        col.update({'name':'Vehicles'},
                        {
                            '$set':
                                {
@@ -463,6 +654,94 @@ class Asset_stack():
                            }
                    }
                    )
+        self.submitapi(factnum,"vehicle")
+
+    # def asset_building(self,build_item,ucount):
+    #
+    #     col = con['building_asset']
+    #
+    #     if ucount == 0:
+    #         col.update({'name':'Buildings'},
+    #                    {
+    #                        '$set':
+    #                            {
+    #                                'items':[]
+    #                            }
+    #                    }
+    #                    )
+    #     col.update({'name':'Buildings'},
+    #                {
+    #                    '$addToSet':
+    #                        {
+    #                            'items': build_item
+    #                        }
+    #                }
+    #                )
+
+    def asset_building(self,build_item,factnum):
+
+        col = con['building_asset']
+
+        col.update({'name':'Buildings'},
+                           {
+                               '$set':
+                                   {
+                                       'items':[]
+                                   }
+                           }
+                           )
+        col.update({'name':'Buildings'},
+                       {
+                           '$addToSet':
+                               {
+                                   'items': build_item
+                               }
+                       }
+                       )
+
+        self.submitapi(factnum,"building")
+
+    def submitapi(self,factnum,asset_typ):
+        global asset_resp
+
+        # logger.info("{----------")
+        # testdb.get_rating_factors(caseval, test_case, tinfo)
+        if asset_typ == 'building':
+            asset_req = self.build_asset_stack("Buildings")
+        elif asset_typ == 'vehicle':
+            asset_req = self.build_asset_stack("Motor_vehicles")
+        elif asset_typ == 'allrisks':
+            asset_req = self.build_asset_stack("AllRisks")
+        elif asset_typ == 'personalliability':
+            asset_req = self.build_asset_stack("personal_liability")
+        elif asset_typ == 'homecontent':
+            asset_req = self.build_asset_stack("Home_contents")
+
+        tgate = gateway_process("asset_api")
+
+        asset_resp = tgate.api_exec(asset_req)
+
+        asset_resp1 = asset_resp[0]
+        print("check point....")
+        print(asset_resp1)
+        print(type(asset_resp1))
+        quotenum = asset_resp1['quoteNumber']
+        asset_resp_dat = asset_resp[0]
+        asset_resp_dat = json.dumps(asset_resp_dat, indent=5)
+
+        testtitle = "/* Rating factor : " +factnum + "*/"
+        logger.info(testtitle)
+        testtitle = "/* Quotenumber : "+quotenum+"*/"
+        logger.info(testtitle)
+        logger.info("/** API Request **/")
+        logger.info(asset_req)
+        logger.info("/** API Response **/")
+        # check
+
+        logger.info(asset_resp_dat)
+
+    def asset_resp_handover(self):
+        return asset_resp
 
 class external_gateway_process():
 
@@ -585,26 +864,28 @@ class gateway_process():
         #         'x-ibm-client-id': "3d67e856-8438-4ffa-a25e-b61058bc821c"
         #         }
 
-        head = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        head = {'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                "client_app_id":"f2e1183d-0035-40da-8ba5-b0ad358377f8"
+                }
         if funcp == "asset_api":
             #gateway non-prod:
             #auth_tok = self.auth_token()
-            req_url = 'http://prbk-pa001sap4v/Insurance.Quoting2/api/Quotes/Process'
+            req_url = process_quote
         elif funcp == "calculate_prorata":
-            req_url = 'http://prbk-pa001sap4v/Insurance.Quoting2/api/Quotes/CalculateProRata'
+            req_url = accept_quote
         elif funcp == "convert_to_policy":
-                req_url = "http://prbk-pa001sap4v/Insurance.Quoting2/api/Quotes/ConvertQuoteToPolicy/"
+            req_url = conv_to_policy
         elif funcp == "view_policy":
-            req_url = "http://prbk-pa001sap4v/Insurance.Quoting2/api/Policies/"
+            req_url = view_policy
         elif funcp == "amend_quote":
-            req_url = "http://prbk-pa001sap4v/Insurance.Quoting2/api/Quotes/"
+            req_url = view_quote
         elif funcp == "process_policy":
-            req_url = "http://prbk-pa001sap4v/Insurance.Quoting2/api/Policies/Process"
+            req_url = process_policy
         elif funcp == "accept_policy":
-            req_url = "http://prbk-pa001sap4v/Insurance.Quoting2/api/Policies/AcceptPolicyAmendment/"
+            req_url = accept_policy_amendment
         elif funcp == "prorata_process":
-            req_url = "http://prbk-pa001sap4v/InsuranceCalc.Api/api/Calculator/Prorata"
-
+            req_url = calculate_prorata
 
 
     def api_exec(self,api_req):
@@ -615,29 +896,28 @@ class gateway_process():
         print(do_req)
         print(req_url)
         print(head)
-        try:
-            response = requests.post(req_url, data=do_req, headers=head)
+        response = requests.post(req_url, data=do_req, headers=head,verify=False)
 
-            print("Response  from API Gateway...........", response.status_code)
-            statcode = response.status_code
-            do_resp = response.json()
+        print("Response  from API Gateway...........", response.status_code)
+        statcode = response.status_code
+        do_resp = response.json()
 
-            print(do_resp)
-            print("Type of response data:", type(do_resp))
-            return do_resp,statcode
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
-            print('Connection time out....Server is down..')
-            do_resp = "Connection timed out...SERVER IS DOWN !!..Please try again later."
-            return do_resp,statcode
+        print(do_resp)
+        print("Type of response data:", type(do_resp))
+        return do_resp,statcode
+        # except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
+        #     print('Connection time out....Server is down..')
+        #     do_resp = "Connection timed out...SERVER IS DOWN !!..Please try again later."
+        #     return do_resp,statcode
 
 
     def convtop_exec(self,policy_n):
 
-        req_url = "http://prbk-pa001sap4v/Insurance.Quoting2/api/Quotes/ConvertQuoteToPolicy/"
+        req_url = "https://prbk-pa001sap4v:444/Insurance.Quoting2/api/Quotes/ConvertQuoteToPolicy/"
         req_url = req_url + policy_n
 
         try:
-            response = requests.post(req_url, headers=head)
+            response = requests.post(req_url, headers=head,verify=False)
 
             print("Response  from API Gateway...........", response.status_code)
             statcode = response.status_code
@@ -659,7 +939,7 @@ class gateway_process():
         print(vpolicy_url)
         try:
 
-            response = requests.get(vpolicy_url, headers=head)
+            response = requests.get(vpolicy_url, headers=head,verify=False)
             statcode = response.status_code
             do_resp = response.json()
 
@@ -677,7 +957,7 @@ class gateway_process():
         vquote_url = req_url +vquote
         print(vquote_url)
         try:
-            response = requests.get(vquote_url, headers=head)
+            response = requests.get(vquote_url, headers=head,verify=False)
             statcode = response.status_code
             do_resp = response.json()
 
@@ -696,7 +976,7 @@ class gateway_process():
         print(req_url)
         print(head)
         try:
-            response = requests.post(req_url, data=do_req, headers=head)
+            response = requests.post(req_url, data=do_req, headers=head,verify=False)
 
             print("Response  from API Gateway...........", response.status_code)
             statcode = response.status_code
@@ -717,7 +997,7 @@ class gateway_process():
         do_req = api_req
 
         try:
-            response = requests.post(req_url, data=do_req, headers=head)
+            response = requests.post(req_url, data=do_req, headers=head,verify=False)
 
             print("Response  from API Gateway...........", response.status_code)
             statcode = response.status_code
@@ -743,7 +1023,7 @@ class gateway_process():
 
         try:
             print(acdpol_url)
-            response = requests.post(acdpol_url, headers=head)
+            response = requests.post(acdpol_url, headers=head,verify=False)
 
             print("Response  from API Gateway...........", response.status_code)
             statcode = response.status_code
@@ -761,7 +1041,8 @@ class test_rating_db(Asset_stack):
 
     def __init__(self,tconnect):
         global col,logger
-        db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        db = MongoClient()
+        # db = MongoClient('mongodb://prbk-pa001sap4v:27017')
         con = db['ApiTestContainer']
         if tconnect == "rate_home_contents":
             col = con['rate_home_contents']
@@ -774,6 +1055,9 @@ class test_rating_db(Asset_stack):
         elif tconnect == 'rate_allrisks':
             col = con['rate_allrisks']
             print("Connected to --rate_allrisks--- test DB")
+        elif tconnect == 'rate_buildings':
+            col = con['rate_building']
+            print("Connected to --rate_building--- test DB")
 
 
     def get_rating_factors(self,caseval,testcase,tinfo):
@@ -786,6 +1070,8 @@ class test_rating_db(Asset_stack):
             tab_title = "rate_vehicles"
         elif testcase == "asset_allrisks":
             tab_title = "rate_allrisks"
+        elif testcase == "asset_building":
+            tab_title = "rate_buildings"
 
         rtcont = col.find_one({"title": "" + tab_title + ""})
 
@@ -804,7 +1090,8 @@ class test_rating_db(Asset_stack):
                 testkey = datal[kcount]
 
                 print(rcfact[testkey])
-                logger.info(rcfact[testkey])
+                rcfactor = "/* Rating factors : "+rcfact[testkey]+"*/"
+                logger.info(rcfactor)
                 testfact = rcfact[testkey]
                 precount = len(testfact)
 
@@ -831,6 +1118,8 @@ class test_rating_db(Asset_stack):
         if tab_title == "rate_allrisks":
             assetops.update_allrisks_item(testkey,testfact,precount,tinfo)
 
+        if tab_title == "rate_buildings":
+            assetops.update_building_item(testkey,testfact,precount,tinfo)
 
 class All_safe(test_rating_db):
     def __init__(self):
@@ -902,13 +1191,13 @@ class All_safe(test_rating_db):
             print('quote_number:',quotn)
             assert len(quotn) > 5
 
-            vkey = int(ikey) * 2
-            print("my ikey is..",vkey)
-
-            if itemtyp == 'CAR':
-                ikey = vkey
-
-            assert len(itemp) == ikey
+            # vkey = int(ikey) * 2
+            # print("my ikey is..",vkey)
+            #
+            # if itemtyp == 'CAR':
+            #     ikey = vkey
+            #
+            # assert len(itemp) == ikey
             print("am PASS")
             return 'PASS'
 
@@ -918,13 +1207,12 @@ class All_safe(test_rating_db):
         finally:
             print('api response - validation completed...')
 
-
 class report_builder():
 
     def __init__(self, logsuit):
         global logcol, unid
-
-        logdb = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        logdb = MongoClient()
+        # logdb = MongoClient('mongodb://prbk-pa001sap4v:27017')
         logcon = logdb['ApiTestContainer']
         logcol = logcon['test_report']
 
@@ -938,6 +1226,8 @@ class report_builder():
                 test_suite = 'AllRisks Rating Factors - Asset API'
             elif logsuit == 'quote_to_policy':
                 test_suite = 'Process Quote - Asset API'
+            elif logsuit == 'asset_building':
+                test_suite = 'Building Rating Factors - Asset API'
 
             unid = uuid.uuid4()
             unid = str(unid)
@@ -972,7 +1262,6 @@ class report_builder():
             gs = All_safe()
             gs.test_all_safe('report', trept)
 
-
 class log_builder():
 
     def __init__(self, logfile):
@@ -997,6 +1286,11 @@ class log_builder():
 
         elif logfile == 'asset_allrisks':
             tfilename = 'log_asset_allrisks_' + curr_time
+            print(tfilename)
+            tfilename = tfilename + '.json'
+
+        elif logfile == 'asset_building':
+            tfilename = 'log_asset_building_' + curr_time
             print(tfilename)
             tfilename = tfilename + '.json'
 
@@ -1037,7 +1331,8 @@ class log_builder():
     def set_log(self, loglevl, format):
 
         if format == 'format':
-            format = '%(levelname)s - %(name)s - %(message)s - %(asctime)s'
+            # format = '%(levelname)s - %(name)s - %(message)s - %(asctime)s'
+            format = '%(message)s - %(asctime)s'
         elif format == 'noformat':
             format = ''
 
@@ -1076,7 +1371,6 @@ class log_builder():
         if func == 'handover':
             gs = All_safe()
             gs.test_all_safe('file', tfilename)
-
 
 class Rating_engine():
 
@@ -1129,11 +1423,11 @@ class Rating_engine():
             print("Directory already exist!!!")
             pass
 
-
 class Policy_api():
     def __init__(self,spinner):
         global col
-        db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        db = MongoClient()
+        # db = MongoClient('mongodb://prbk-pa001sap4v:27017')
         con = db['ApiTestContainer']
         if spinner == 'get_policy' or spinner == 'log_policy' or spinner == 'amend_policy':
             col = con['policy_hub']

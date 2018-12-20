@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from test_gate import log_builder,gateway_process
+from .test_gate import log_builder,gateway_process
 import json
 
 
@@ -7,7 +7,9 @@ import json
 class prorata_calculator():
 
     def __init__(self):
-        pass
+        global con
+        db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        con = db['ApiTestContainer']
 
     def prorata_calc_log(self):
         global logger
@@ -15,13 +17,14 @@ class prorata_calculator():
         logger = tlog.set_log('INFO', 'noformat')
 
     def prorata_main(self,date_rfact):
-        db = MongoClient()
-        con = db['mongo_builder']
+
         col = con['prorata_base']
 
         rfact = date_rfact
+        prdisp = []
 
         for point in rfact:
+
             col.update({"ItemType": "MOT"},
                        {
                            "$set": {
@@ -31,7 +34,6 @@ class prorata_calculator():
                        })
 
             procal_api = col.find_one({"ItemType": "MOT"})
-
 
             del procal_api['_id']
             procal_api = json.dumps(procal_api, indent=5)
@@ -45,8 +47,12 @@ class prorata_calculator():
 
             asset_resp = tgate.process_prorata(procal_api)
 
-
+            amount = asset_resp['Amount']
+            point.update({"Amount":amount,"Premium":1000})
+            prdisp.append(point)
             asset_resp = json.dumps(asset_resp, indent=5)
+
+
 
             print("API response----------------")
 
@@ -54,12 +60,12 @@ class prorata_calculator():
 
             # logger.info("API Response:---------------------")
             # logger.info(asset_resp)
+        return prdisp
 
     def getdate(self):
         db = MongoClient()
-        con = db['test_data']
         col = con['prorata_factors']
-        prodate_dict = col.find_one({"name": "Prorate rating foctors"})
+        prodate_dict = col.find_one({"runtype": "testfact_2018"})
 
         del prodate_dict['_id']
 
@@ -76,4 +82,7 @@ if __name__ == '__main__':
 
     #pcalc.prorata_calc_log()
 
-    pcalc.prorata_main(date_fact)
+    prdata = pcalc.prorata_main(date_fact)
+    print(prdata)
+
+    print(len(prdata))

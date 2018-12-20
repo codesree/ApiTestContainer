@@ -9,7 +9,10 @@ class asset_manager():
     def __init__(self):
 
         global db,con
-        db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        # Online test - Server
+        # db = MongoClient('mongodb://prbk-pa001sap4v:27017')
+        # # Offline test - localhost
+        db = MongoClient()
         con = db['ApiTestContainer']
 
     def calculate_prorata(self,quoten):
@@ -89,7 +92,6 @@ class asset_manager():
         asset_secl = []
 
         # Build Motor_vehicle
-        print(asset_dict['motor_list'])
         try:
             assert len(asset_dict['motor_list']) != 0
             motordl = asset_dict['motor_list']
@@ -130,7 +132,6 @@ class asset_manager():
 
 
         # Build Buildings
-        print(asset_dict['building_list'])
 
         try:
             assert len(asset_dict['building_list']) != 0
@@ -145,7 +146,6 @@ class asset_manager():
             print('no update scheduled for Buildings')
 
         # Build Personal liabilities
-        print(asset_dict['persliab_list'])
 
         try:
             assert len(asset_dict['persliab_list']) != 0
@@ -175,7 +175,7 @@ class asset_manager():
 
         try:
             assert collect == 'motor_vehicle'
-            col = con['vehicle_item_draft']
+            col = con['vehicle_item']
             chkc = 0
             while chkc < updcount:
                 for md in iteml:
@@ -201,7 +201,7 @@ class asset_manager():
                                {'$set':{
                                    'itemKey':''+md['model']+''
                                }})
-                    self.asset_stack('vehicle_item_draft', 'vehicle_asset', 'Vehicles', 'Vehicle', chkc)
+                    self.asset_stack('vehicle_item', 'vehicle_asset', 'Vehicles', 'Vehicle', chkc)
                     chkc = chkc + 1
 
 
@@ -215,7 +215,7 @@ class asset_manager():
 
         try:
             assert collect == 'home_content'
-            col = con['homecontent_item_draft']
+            col = con['homecontent_items']
             chkc = 0
             while chkc < updcount:
                 for hd in iteml:
@@ -226,7 +226,7 @@ class asset_manager():
                                }
                                }
                                )
-                    self.asset_stack('homecontent_item_draft','homecontent_asset', 'Home Contents','HomeContent', chkc)
+                    self.asset_stack('homecontent_items','homecontent_asset', 'Home Contents','HomeContent', chkc)
                     chkc = chkc + 1
 
             homec_pro = self.asset_strip('homecontent_asset', 'Home Contents')
@@ -239,7 +239,7 @@ class asset_manager():
 
         try:
             assert collect == 'allrisks'
-            col = con['allrisks_item_draft']
+            col = con['allrisks_item']
             chkc = 0
             while chkc < updcount:
                 for ad in iteml:
@@ -251,7 +251,7 @@ class asset_manager():
                                }
                                )
 
-                    self.asset_stack('allrisks_item_draft', 'allrisks_asset', 'All Risks', 'AllRisk', chkc)
+                    self.asset_stack('allrisks_item', 'allrisks_asset', 'All Risks', 'AllRisk', chkc)
                     chkc = chkc + 1
 
             allrisk_pro = self.asset_strip('allrisks_asset', 'All Risks')
@@ -266,7 +266,7 @@ class asset_manager():
         try:
             assert collect == 'persliab'
 
-            col = con['personal_liability_item_draft']
+            col = con['personal_liability_item']
             chkc = 0
             print("am in persliab update")
 
@@ -281,7 +281,7 @@ class asset_manager():
                                    }
                                }
                                )
-                    self.asset_stack('personal_liability_item_draft', 'personal_liability_asset', 'Personal Liabilities', 'PersonalLiability', chkc)
+                    self.asset_stack('personal_liability_item', 'personal_liability_asset', 'Personal Liabilities', 'PersonalLiability', chkc)
                     chkc = chkc + 1
 
             persliab_pro = self.asset_strip('personal_liability_asset', 'Personal Liabilities')
@@ -296,7 +296,7 @@ class asset_manager():
         try:
             assert collect == 'building'
             print("am in building update")
-            col = con['building_item_draft']
+            col = con['building_item']
             chkc = 0
             print("am in building update")
             print(updcount)
@@ -312,7 +312,7 @@ class asset_manager():
                                }
                                )
                     print("building update complete...")
-                    self.asset_stack("building_item_draft", "building_asset", "Buildings", "Building", chkc)
+                    self.asset_stack("building_item", "building_asset", "Buildings", "Building", chkc)
                     chkc = chkc + 1
 
             building_pro = self.asset_strip("building_asset", "Buildings")
@@ -561,7 +561,7 @@ class asset_manager():
         self.stacker = stacker
 
         if self.motor != 'ok':
-            col = con['vehicle_item_draft']
+            col = con['vehicle_item']
             motor_item = col.find_one({'name': 'Vehicle'})
             print(type(motor_item))
             del motor_item['_id']
@@ -590,7 +590,7 @@ class asset_manager():
 
 
         elif self.home != 'ok':
-            col = con['homecontent_item_draft']
+            col = con['homecontent_items']
             build_item = col.find_one({'name': 'HomeContent'})
             del build_item['_id']
 
@@ -673,9 +673,11 @@ class Asset_endtoend():
         asset_resp_dat = asset_resp[0]
         asset_respcode = asset_resp[1]
 
+        print(asset_respcode)
+
         if asset_respcode == 200:
             #print("quote number", aquotn)
-            #print("Am Pass!!")
+            print("Am Pass!!")
 
             return 'PASS'
 
