@@ -105,10 +105,17 @@ def asset_end_to_end(request):
 
 def rating_chamber(request):
 
+    time.sleep(2)
 
     try:
-        assert (request.method == 'POST' and request.POST.get('builditem') == 'genderfact')
-        gendersel  = request.POST.getlist("gender[]")
+        assert (request.method == 'GET' and request.GET.get("gflist"))
+        gendersel = request.GET.get("gflist")
+        print(gendersel)
+        gendersel = gendersel.split(',')
+        print(gendersel)
+        print(type(gendersel))
+        return render(request,'rating_chamber.html')
+
 
         if gendersel == 'all':
             testbuild = 'testRatingEngineGenderfactor'

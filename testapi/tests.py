@@ -587,7 +587,6 @@ class asset_homecontent(unittest.TestCase):
         rlog.report_handover('handover')
         tlog.file_handover('handover')
 
-
 class asset_building(unittest.TestCase):
 
     @classmethod
@@ -901,7 +900,6 @@ class asset_building(unittest.TestCase):
 
         rlog.report_handover('handover')
         tlog.file_handover('handover')
-
 
 class asset_vehicle(unittest.TestCase):
 
@@ -1334,7 +1332,6 @@ class asset_vehicle(unittest.TestCase):
         rlog.report_handover('handover')
         tlog.file_handover('handover')
 
-
 class asset_allrisks(unittest.TestCase):
 
     @classmethod
@@ -1538,7 +1535,6 @@ class asset_allrisks(unittest.TestCase):
         rlog.report_handover('handover')
         tlog.file_handover('handover')
 
-
 class asset_personal_liability(unittest.TestCase):
 
     @classmethod
@@ -1666,8 +1662,6 @@ class asset_personal_liability(unittest.TestCase):
 
         rlog.report_handover('handover')
         tlog.file_handover('handover')
-
-
 
 class ratingEngineBuild(unittest.TestCase):
 
@@ -2142,6 +2136,10 @@ class asset_api_process(unittest.TestCase):
 
         rlog.report_handover('handover')
         tlog.file_handover('handover')
+
+
+
+
 
 # class asset_api_process(unittest.TestCase):
 #

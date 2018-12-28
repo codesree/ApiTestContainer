@@ -12,67 +12,29 @@
  <!------------- TEST EXECUTION CONTAINER FOR RATING ENGINE ---------------------->
           <div class="panel panel-primary">
     <div class="panel-body">
-        {% if tstat == 'assetdone' %}
-             <!--   <div class="row">
-      <div class="col-sm-8"><h5>TEST FACTORS - RATING ENGINE </h5></div>
-      <div class="col-sm-4">
-         <p class="asretestexe"><button class="btn btn-primary active"><span class="glyphicon glyphicon-play"></span>Re-Run</button></p>
-                    <div class="asload">
-    </div>
 
-      </div>
-    </div>-->
-    <div class="row">
-        <div class="exestat">
-               {% if tstat == 'assetdone' %}
-              {% if testrep and logfile %}
-  <blockquote>
-      <h5><p class="text-success">Execution Completed successfully......</p></h5>
-      <br>
-    <footer>  <div class="col-xs-4"><a href="{% url 'download_log' %}"><button type="button" class="btn btn-default active">Download test log</button></a></div>
-                      <div class="col-xs-3"><a href="{% url 'test_report' %}"><button type="button" class="btn btn-info active">View test report</button></a></div>
-</footer>
-  </blockquote>
-              {% else %}
-                    <blockquote>
-    <p><code>Execution Failed.............please see below info</code></p>
-                        <br>
-    <footer>Problem might have been with test report/test log generation. Please contact admin for more clarity ..</p>
-
-</footer>
-  </blockquote>
-              {% endif %}
-          {% endif %}
-
-
-        </div>
-    </div>
-            {% else %}
-              <!--  <div class="row">
-      <div class="col-sm-6"><h5>TEST FACTORS - RATING ENGINE </h5></div>
-      <div class="col-sm-6">
-                 <p class="astestexe"><button class="btn btn-primary"><span class="glyphicon glyphicon-play"></span> Run</button></p>
-          <div class="asload">
-    </div>
-      </div>
-    </div>-->
-                {% endif %}
     <!-- TEST BUILDS - RATING ENGINE AUTOMATION  start-->
-  <h4>Build #1: { Rating Gender factors }</h4>
-  <button type="button" class="buildbt btn btn-primary collapsed" data-toggle="collapse" data-target="#genfact">Build now</button>
+<div class="row">
+    <div class="col-sm-6">
+     <h4>Build #1: { Rating Gender factors }</h4></div>
+     <div class="col-sm-4">
+     <button type="button" class="buildbt btn btn-primary collapsed" data-toggle="collapse" data-target="#genfact">Build now</button>
+     </div>
+    </div>
+    <div class="row">
   <div id="genfact" class="collapse">
-      <div class="row">
-          <div class = "col-sm-8">
 <div class="checkbox">
-  <label><input type="checkbox" name="male" value="male">Male</label><br>
-  <label><input type="checkbox" name="female" value="female">Female</label><br>
-  <label><input type="checkbox" name="female" value="female">Other</label><br>
-</div>
-          </div>
-          <div class="col-sm-4">
-            <p class="astestexe"><button class="btn btn-primary"><span class="glyphicon glyphicon-play"></span>Run</button></p>
+  <div class="list-group">
+      <a href="#" class="list-group-item"><label><input class="gfclass" id="male" type="checkbox" name="gfdata[]" value="male">Male</label></a>
+      <a href="#" class="list-group-item"><label><input class="gfclass" id="female" type="checkbox" name="gfdata[]" value="female">Female</label></a>
+      <a href="#" class="list-group-item"><label><input class="gfclass" id="other"  type="checkbox" name="gfdata[]" value="other">Other</label></a>
+  </div></div><br>
+          <div class="col-sm-2">
+            <p class="gftestexe"><button class="btn btn-primary">Execute</button></p>
+            <div class="gfload"></div>
           </div>
       </div>
+    </div>
   </div>
 </div>
 
@@ -80,42 +42,95 @@
     </div>
 
 
+        <div class="row">
+    <div class="col-sm-8">
+
+ <!------------- TEST EXECUTION CONTAINER FOR RATING ENGINE ---------------------->
+          <div class="panel panel-primary">
+    <div class="panel-body">
+
+    <!-- TEST BUILDS - RATING ENGINE AUTOMATION  start-->
+<div class="row">
+    <div class="col-sm-6">
+     <h4>Build #2: { Rating Age factors }</h4></div>
+     <div class="col-sm-4">
+     <button type="button" class="buildbt btn btn-primary collapsed" data-toggle="collapse" data-target="#agefact">Build now</button>
+     </div>
+    </div>
+    <div class="row">
+  <div id="agefact" class="collapse">
+      <div class="row">
+      <div class="col-sm-3">Please select an option:</div>
+  <div class="col-sm-4">
+<select id="multi-select-demo" multiple="multiple">
+    <option value="20">20-25</option>
+    <option value="30">28-36</option>
+    <option value="42">40-45</option>
+    <option value="52">50-55</option>
+    <option value="59">58-60</option>
+</select></div>
+          <div class="col-sm-2">
+<input type="submit" onclick="getSelectedValues()" class="btn btn-primary" value="Execute">
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
     </div>
 
 
 
     </div>
+
 
 
 <!------------------------ TEST SUITE EXE HANDLER ------------------------------>
     <script>
 
+
+
+
 $(document).ready(function() {
 
-    var aslwrap = $(".asload");
+    var gendlwrap = $(".gfload");
+
+    $('#multi-select-demo').multiselect({
+        nonSelectedText: 'Select the age factor',
+        buttonWidth: 250,
+        includeSelectAllOption: true,
+        maxHeight: 350,
+
+    });
 
 
-
-    var asteststart = $(".astestexe");
-    var asretest = $(".asretestexe");
+    var gfteststart = $(".gftestexe");
+    var gfretest = $(".gfretestexe");
 ;
 
     var exestat = $(".exestat");
 
-        $(asteststart).click(function(e){
-                $(asteststart).hide();
+        $(gfteststart).click(function(e){
+                $(gfteststart).hide();
                         e.preventDefault();
-                          $(aslwrap).append('<div class="loading"><h5>Executing...</h5>\n' +
-                    '  <div class="loading-bar"></div>\n' +
-                    '  <div class="loading-bar"></div>\n' +
-                    '  <div class="loading-bar"></div>\n' +
-                    '  <div class="loading-bar"></div>\n' +
+
+                        var gflist = [];
+                        $('.gfclass:checked').each(function() {
+                        gflist.push($(this).val());
+                        });
+                          $(gendlwrap).append('<div class="loading"><h5>Executing...</h5>\n' +
+                    '<div class="loading-bar"></div>\n' +
+                    '<div class="loading-bar"></div>\n' +
+                    '<div class="loading-bar"></div>\n' +
+                    '<div class="loading-bar"></div>\n' +
                                             '  <div class="loading-bar"></div>\n' +
                                             '  <div class="loading-bar"></div>\n' +
 
 
                     '</div>');
-                                  document.location.href="{% url "asset_end_to_end" %}"
+                    document.location.href="{% url 'rating_chamber' %}"+"?gflist="+gflist;
+
 
         });
 

@@ -1,11 +1,23 @@
 from pymongo import MongoClient
+from testpoc import testsome
+import unittest
+
+def testthis():
+    suite = unittest.TestSuite()
+
+    funcname = ["test_b_data"]
+
+    for i in funcname:
+        suite.addTest(testsome(i))
+
+    tcrun = unittest.TextTestRunner()
+
+    tcrun.run(suite)
 
 
-print("Hello World!!")
-# db = MongoClient('mongodb://prbk-pa001sap4v:27017')
-db = MongoClient()
+if __name__ == '__main__':
+    testthis()
 
-con = db['ApiTestContainer']
 # col = con['homecontent_items']
 # reqjson = col.find_one({"itemType": "HomeContent"})
 # del reqjson['_id']
@@ -34,19 +46,5 @@ con = db['ApiTestContainer']
 #
 
 
-col = con['homecontent_item_draft']
-# col.update(
-#     {"itemType":"HomeContent"},
-#     {"$set":{"draft":reqjson}}
-#     )
-rkey = "Alarm"
-factnum = "testfact"
-col.update({'draft.itemProperties.name': "" + rkey + ""},
-                             {'$set': {
-                                   'draft.itemProperties.$.value': factnum
-                               }
-                               })
 
-checkjson = col.find_one({"itemType":"HomeContent"})
-print(checkjson['draft'])
 

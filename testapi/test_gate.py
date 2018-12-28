@@ -7,7 +7,7 @@ import uuid,os
 from oauthlib import oauth2
 from requests.auth import HTTPBasicAuth
 
-from .config import *
+from testapi.config import *
 
 
 class Asset_stack():
@@ -1058,6 +1058,10 @@ class test_rating_db(Asset_stack):
         elif tconnect == 'rate_buildings':
             col = con['rate_building']
             print("Connected to --rate_building--- test DB")
+        elif tconnect == 'rate_persons':
+            col = con['rate_persons']
+            print("Connected to --rate_persons--- test DB")
+
 
 
     def get_rating_factors(self,caseval,testcase,tinfo):
@@ -1120,6 +1124,45 @@ class test_rating_db(Asset_stack):
 
         if tab_title == "rate_buildings":
             assetops.update_building_item(testkey,testfact,precount,tinfo)
+
+
+    def rating_engine_factors(self,title,factval):
+
+        rtcont = col.find_one({"title": ""+title+""})
+
+        del rtcont['_id']
+        rcfact = rtcont['ratingfactors']
+        datak = rcfact.keys()
+        print(datak)
+        datal = list(datak)
+        kcount = 0
+        while kcount < len(datal):
+            print("key count is", kcount)
+            if datal[kcount] == factval:
+                print("found!!!!")
+                print(datal[kcount])
+
+                testkey = datal[kcount]
+
+                print(rcfact[testkey])
+                rcfactor = "/* Rating factors : " + rcfact[testkey] + "*/"
+                logger.info(rcfactor)
+                testfact = rcfact[testkey]
+                precount = len(testfact)
+
+                print(precount)
+
+                """Process the request json in mongodb using
+                   1.testkey  - datatype - char (eg: "ControlledAccess")
+                   2.testfact - datatype - dict (eg:{"key":"value".....}) 
+                   3.precount - datatype - int  (eg: total number for updates to perform and add)
+                """
+                break
+            kcount = kcount + 1
+        else:
+            print("Test_Rating_factor Key does not exist in test DB..Test case failed")
+
+        return testfact
 
 class All_safe(test_rating_db):
     def __init__(self):
