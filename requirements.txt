@@ -23,7 +23,7 @@ docutils==0.14
 gunicorn==19.9.0
 html-testRunner==1.1.2
 idna==2.6
-Jinja2==2.9.5
+Jinja2==2.11.3
 jmespath==0.9.3
 jsonschema==2.6.0
 MarkupSafe==1.0
